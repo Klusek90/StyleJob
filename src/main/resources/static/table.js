@@ -1,27 +1,36 @@
-let columnsNum =2;
-let rowNum=3;
+$("#but").click(function (){
 
-let columns = '<br/>&emsp;&emsp;&lt;fo:table-column column-width=\"20mm\"/&gt;';
+let columnsNum =$('#col').val();
+let rowNum=$('#row').val();
+
+// creating row layout
+let columns = '\n\t\t<fo:table-column column-width=\"20mm\"/>';
 columns= columns.repeat(columnsNum);
 
+let rowBlock = '\n\t\t\t\t<fo:table-cell>'+
+                   '\n\t\t\t\t\t<fo:block>'+
+                        '\n\t\t\t\t\t\t #Text' +
+                    '\n\t\t\t\t\t</fo:block>'+
+                '\n\t\t\t\t</fo:table-cell>'
 
-let rows = '<br>&emsp;&emsp;&emsp;&lt;fo:table-row&gt;'+ '<br>&emsp;&emsp;&emsp;&lt;/fo:table-row&gt;'
+rowBlock =rowBlock.repeat(columnsNum)
+
+
+//row layout
+let rows = '\n\t\t\t<fo:table-row>'+ rowBlock+'\n\t\t\t</fo:table-row>'
 rows =rows.repeat(rowNum);
 
 
-let tab = '&lt;fo:block-container font-size=\"8.5pt\" border=\"solid\"&gt;'+
-            '<br/>&ensp; &lt;fo:table&gt;'+
+let tab = '<fo:block-container font-size=\"8.5pt\" border=\"solid\">'+
+            '\n\t<fo:table>'+
                 columns+
-                '<br/>&emsp; &lt;fo:body&gt;'+
+                '\n\t\t<fo:body>'+
                 rows+
-                '<br/>&emsp; &lt;/fo:body&gt;'+
-            '<br/>&ensp;&lt;/fo:table&gt;'+
-            '<br/> &lt;/fo:block-container&gt;';
+                '\n\t\t</fo:body>'+
+            '\n\t</fo:table>'+
+            '\n</fo:block-container>';
 
 
 
-
-$("#but").click(function (){
-    $('#tabDisplay').html(tab);
-
+$('.text').val(tab);
 });

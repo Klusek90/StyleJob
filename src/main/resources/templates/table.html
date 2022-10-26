@@ -7,14 +7,31 @@
 <body>
     <div class="container">
         <div class="row">
+          <div class="col inputs">
             <form>
+                <span>number of columns</span>&emsp;
                 <input type="text" id="col">
-                <input type="text" id="row">
-                <button type="button" id="but">Create</button>
+                <span>number of rows</span>&emsp;&emsp;&emsp;
+                <input type="text" id="row"><br/>
+                <button type="button" id="but" class="btn btn-primary">Create</button>
             </form>
+         </div>
+            <div class="main">
+                <h3>Additonal options</h3>
 
-            <p id="tabDisplay">Table generator</p>
+            </div>
         </div>
+
+
+        <div class="row right-button">
+                    <button id="copybtn" class="btn btn-primary">
+                        <i class="fa fa-clone">Copy</i>
+                    </button>
+            </div>
+            <div class="row">
+                    <textarea class="text"> </textarea>
+            </div>
+
 
     </div>
     <div th:replace="fragments/script :: script"></div>

@@ -1,4 +1,4 @@
-.col{
+.block{
     width: 2.5cm;
     height: 3cm;
     margin-top: 3cm;
@@ -27,4 +27,30 @@ a:hover{
 
 .tab{
     background: forestgreen;
+}
+.text{
+    width: 80%;
+    height: 10cm;
+}
+#copybtn{
+    width: 2cm;
+}
+.inputs{
+    margin-top: 3cm;
+    margin-bottom: 1cm;
+    width: 23%;
+}
+.right-button{
+    text-align: right;
+    margin-right: 19%;
+    display: block;
+}
+.main{
+    width: 77%;
+    text-align: center;
+    margin-top: 2cm;
+
+}
+span{
+    font-weight: bold;
 }
