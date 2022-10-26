@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job>
+    <name>name</name>
+    <regex>XXXXX_/d{8}</regex>
+    <processes>
+        <process>
+            <position>1</position>
+            <script>new-job.pl</script>
+        </process>
+    </processes>
+</job>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <meta charset="UTF-8">
+    <title>Table creator</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <form>
+                <input type="text" id="col">
+                <input type="text" id="row">
+                <button type="button" id="but">Create</button>
+            </form>
+
+            <p id="tabDisplay">Table generator</p>
+        </div>
+
+    </div>
+    <div th:replace="fragments/script :: script"></div>
+</body>
+</html>
