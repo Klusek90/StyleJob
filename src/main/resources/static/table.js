@@ -1,4 +1,6 @@
-function create(columnsNum, rowNum, solid, header) {
+
+
+function create(columnsNum, rowNum, solid, header,list) {
 
     let s;
     let h;
@@ -16,11 +18,15 @@ function create(columnsNum, rowNum, solid, header) {
     };
 
 
+  let columns ="";
+for(let c=1;c<=columnsNum;c++){
+    columns = columns+ '\n\t\t<fo:table-column column-width=\"'+list[c]+'%\"/>';
 
+}
 
 // creating row layout
-    let columns = '\n\t\t<fo:table-column column-width=\"20mm\"/>';
-    columns = columns.repeat(columnsNum);
+//     columns = '\n\t\t<fo:table-column column-width=\"20mm\"/>';
+//     columns = columns.repeat(columnsNum);
 
 
 
@@ -71,7 +77,7 @@ return tab;
 function addFields(columnsNum){
     $(".colsize").html("");
     for(let x =1;x<=columnsNum;x++ ){
-    $('.colsize').append('<span>Column '+x+' width in % </span><input type="text" id="colsize'+x+'"><br>');}
+    $('.colsize').append('<span>Col'+x+' </span><input type="text" id="colsize'+x+'"><br>');}
 }
 
 
@@ -97,8 +103,47 @@ $("#create").click(function (){
         h = 0
     }
 
-    let details = create(x,y,s,h);
-$('textarea.text').val(details);
-addFields(x);
 
+    colList = [];
+    for (let i =1; i<=x;i++){
+        colList[i]= $('#colsize'+i).val();
+    };
+
+    let details = create(x,y,s,h,colList);
+$('textarea.text').val(details);
+
+    addFields(x);
+});
+
+
+$("#update").click(function (){
+    let x =$('#col').val();
+    let y = $('#row').val()
+    let s;
+    let h
+
+
+    let solid = document.getElementById("solid");
+    let header =document.getElementById("sheaders");
+
+    if (solid.checked==true){
+        s = 1
+    }else {
+        s = 0
+    }
+
+    if (header.checked==true){
+        h = 1
+    }else {
+        h = 0
+    }
+
+
+    colList = [];
+    for (let i =1; i<=x;i++){
+        colList[i]= $('#colsize'+i).val();
+    };
+
+    let details = create(x,y,s,h,colList);
+    $('textarea.text').val(details);
 });
