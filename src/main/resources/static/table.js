@@ -29,8 +29,10 @@ function create(columnsNum, rowNum) {
 return tab;
 }
 
-function addFields(){
-    $('.main').append('<input type="text" class="colsize"><br>');
+function addFields(columnsNum){
+    $(".colsize").html("");
+    for(let x =1;x<=columnsNum;x++ ){
+    $('.colsize').append('<input type="text" id="colsize'+x+'"><br>');}
 }
 
 
@@ -39,6 +41,6 @@ $("#create").click(function (){
     let y = $('#row').val()
     let sum = create(x,y);
 $('textarea.text').val(sum);
-console.log("pl");
+addFields(x);
 
 });
