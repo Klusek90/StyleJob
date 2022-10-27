@@ -1,0 +1,56 @@
+.block{
+    width: 2.5cm;
+    height: 3cm;
+    margin-top: 3cm;
+    text-align: center;
+    margin-left: 2cm;
+    padding: 1cm;
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 26px;
+
+}
+
+a:hover{
+    background:yellowgreen;
+    font-weight: bold;
+    color: yellow;
+}
+
+.job{
+    background: dodgerblue;
+}
+
+.tab{
+    background: forestgreen;
+}
+.text{
+    width: 80%;
+    height: 10cm;
+}
+#copybtn{
+    width: 2cm;
+}
+.inputs{
+    margin-top: 3cm;
+    margin-bottom: 1cm;
+    width: 23%;
+}
+.right-button{
+    text-align: right;
+    margin-right: 19%;
+    display: block;
+}
+.main{
+    width: 77%;
+    text-align: center;
+    margin-top: 2cm;
+
+}
+span{
+    font-weight: bold;
+}
