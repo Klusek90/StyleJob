@@ -24,19 +24,22 @@ function create(columnsNum, rowNum, solid, header) {
 
 
 
-    let rowBlock = '\n\t\t\t\t<fo:table-cell>' +
-        '\n\t\t\t\t\t<fo:block'+h+'>' +
-        '\n\t\t\t\t\t\t #Text' +
-        '\n\t\t\t\t\t</fo:block>' +
-        '\n\t\t\t\t</fo:table-cell>'
+
     let rows= ""
 
     for(let i=1;i<=rowNum;i++){
+        let rowBlock = '\n\t\t\t\t<fo:table-cell>' +
+            '\n\t\t\t\t\t<fo:block'+h+'>' +
+            '\n\t\t\t\t\t\t #Text' +
+            '\n\t\t\t\t\t</fo:block>' +
+            '\n\t\t\t\t</fo:table-cell>';
+        h="";
        rows =rows +'\n\t\t\t<fo:table-row>'+ rowBlock;
+
         for(j=1;j<=(columnsNum-1);j++){
             rows+= rowBlock;
         }
-        rows += '\n\t\t\t</fo:table-row>'
+        rows += '\n\t\t\t</fo:table-row>';
 
     }
 
@@ -80,7 +83,7 @@ $("#create").click(function (){
 
 
     let solid = document.getElementById("solid");
-    let header =$("#sheaders");
+    let header =document.getElementById("sheaders");
 
     if (solid.checked==true){
         s = 1

@@ -35,7 +35,8 @@ a:hover{
 #copybtn{
     width: 2cm;
     display: block;
-
+    float: right;
+    margin-right: 19%;
 }
 .inputs{
     margin-top: 3cm;
@@ -55,4 +56,10 @@ a:hover{
 }
 span{
     font-weight: bold;
+}
+.tbox{
+    float: left;
+    margin-left: 11%;
+    margin-top: 8%;
+    margin-bottom: 5%;
 }
