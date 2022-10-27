@@ -34,6 +34,8 @@ a:hover{
 }
 #copybtn{
     width: 2cm;
+    display: block;
+
 }
 .inputs{
     margin-top: 3cm;
