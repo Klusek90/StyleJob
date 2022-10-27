@@ -36,13 +36,13 @@ for(let c=1;c<=columnsNum;c++){
     for(let i=1;i<=rowNum;i++){
         let rowBlock = '\n\t\t\t\t<fo:table-cell>' +
             '\n\t\t\t\t\t<fo:block'+h+'>' +
-            '\n\t\t\t\t\t\t #Text' +
+            '\n\t\t\t\t\t\t Text'+ i +
             '\n\t\t\t\t\t</fo:block>' +
             '\n\t\t\t\t</fo:table-cell>';
         h="";
        rows =rows +'\n\t\t\t<fo:table-row>'+ rowBlock;
 
-        for(j=1;j<=(columnsNum-1);j++){
+        for(let j=1;j<=(columnsNum-1);j++){
             rows+= rowBlock;
         }
         rows += '\n\t\t\t</fo:table-row>';
