@@ -1,21 +1,32 @@
 
 
-function create(columnsNum, rowNum, solid, header,list) {
+function create(columnsNum, rowNum, solid, header,list,alignR) {
 
     let s;
     let h;
+    let r;
 
-    if(solid==1){
-        s=" border=\"solid\""
-    }else{
-        s=""
-    };
+    if (solid == 1) {
+        s = " border=\"solid\""
+    } else {
+        s = ""
+    }
+    ;
 
-    if(header==1){
-        h=" font-weight=\"bold\""
-    }else{
-        h=""
-    };
+    if (header == 1) {
+        h = " font-weight=\"bold\""
+    } else {
+        h = ""
+    }
+    ;
+
+    if (alignR == 1) {
+        r = " text-align=\"right\""
+    } else{
+        r = ""
+   };
+
+
 
 
   let columns ="";
@@ -24,43 +35,32 @@ for(let c=1;c<=columnsNum;c++){
 
 }
 
-// creating row layout
-//     columns = '\n\t\t<fo:table-column column-width=\"20mm\"/>';
-//     columns = columns.repeat(columnsNum);
-
-
-
-
-    let rows= ""
+    let rows= "";
 
     for(let i=1;i<=rowNum;i++){
-        let rowBlock = '\n\t\t\t\t<fo:table-cell>' +
-            '\n\t\t\t\t\t<fo:block'+h+'>' +
-            '\n\t\t\t\t\t\t Text'+ i +
-            '\n\t\t\t\t\t</fo:block>' +
-            '\n\t\t\t\t</fo:table-cell>';
-        h="";
-       rows =rows +'\n\t\t\t<fo:table-row>'+ rowBlock;
 
-        for(let j=1;j<=(columnsNum-1);j++){
-            rows+= rowBlock;
+       let rowBlock ="";
+
+        for(let j=1;j<=(columnsNum);j++){
+            if (j==columnsNum) {
+                rowBlock += '\n\t\t\t\t<fo:table-cell>' +
+                    '\n\t\t\t\t\t<fo:block' + h +  r +'>' +
+                    '\n\t\t\t\t\t\t Text' + i + "." + j +
+                    '\n\t\t\t\t\t</fo:block>' +
+                    '\n\t\t\t\t</fo:table-cell>';
+            }else{
+                rowBlock += '\n\t\t\t\t<fo:table-cell>' +
+                    '\n\t\t\t\t\t<fo:block' + h +'>' +
+                    '\n\t\t\t\t\t\t Text' + i + "." + j +
+                    '\n\t\t\t\t\t</fo:block>' +
+                    '\n\t\t\t\t</fo:table-cell>';
+            }
+
         }
-        rows += '\n\t\t\t</fo:table-row>';
 
+        rows = rows +'\n\t\t\t<fo:table-row>'+ rowBlock+'\n\t\t\t</fo:table-row>';
+        h = "";
     }
-
-
-
-//
-//     rowBlock = rowBlock.repeat(columnsNum)
-//
-//
-// //row layout
-//     let rows = '\n\t\t\t<fo:table-row>' + rowBlock + '\n\t\t\t</fo:table-row>'
-//     rows = rows.repeat(rowNum);
-//
-//
-
 
     let tab = '<fo:block-container font-size=\"8.5pt\"'+s+'>' +
         '\n\t<fo:table>' +
@@ -85,11 +85,13 @@ $("#create").click(function (){
     let x =$('#col').val();
     let y = $('#row').val()
     let s;
-    let h
+    let h;
+    let r;
 
 
     let solid = document.getElementById("solid");
     let header =document.getElementById("sheaders");
+    let right = document.getElementById("align-right")
 
     if (solid.checked==true){
         s = 1
@@ -103,16 +105,23 @@ $("#create").click(function (){
         h = 0
     }
 
+    if (right.checked==true){
+        r = 1
+    }else {
+        r = 0
+    }
+
 
     colList = [];
     for (let i =1; i<=x;i++){
-        colList[i]= $('#colsize'+i).val();
+        colList[i]= 20;
     };
 
-    let details = create(x,y,s,h,colList);
+    addFields(x);
+    let details = create(x,y,s,h,colList,r);
 $('textarea.text').val(details);
 
-    addFields(x);
+// $("#title").css("display", "block")
 });
 
 
@@ -120,11 +129,13 @@ $("#update").click(function (){
     let x =$('#col').val();
     let y = $('#row').val()
     let s;
-    let h
+    let h;
+    let r;
 
 
     let solid = document.getElementById("solid");
     let header =document.getElementById("sheaders");
+    let right = document.getElementById("align-right")
 
     if (solid.checked==true){
         s = 1
@@ -138,12 +149,23 @@ $("#update").click(function (){
         h = 0
     }
 
+    if (right.checked==true){
+        r = 1
+    }else {
+        r = 0
+    }
+
 
     colList = [];
     for (let i =1; i<=x;i++){
         colList[i]= $('#colsize'+i).val();
     };
 
-    let details = create(x,y,s,h,colList);
+    let details = create(x,y,s,h,colList,r);
     $('textarea.text').val(details);
+
+    for (let i =1; i<=x;i++){
+        $("#colsize"+i) = colList[i];
+    };
+
 });

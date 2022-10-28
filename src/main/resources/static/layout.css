@@ -49,9 +49,8 @@ a:hover{
     display: block;
 }
 .main{
-    width: 77%;
-    text-align: center;
     margin-top: 2cm;
+    width: 50%;
 
 }
 span{
@@ -60,6 +59,9 @@ span{
 .tbox{
     float: left;
     margin-left: 11%;
-    margin-top: 8%;
     margin-bottom: 5%;
+}
+input{
+    width: 1cm;
+
 }
