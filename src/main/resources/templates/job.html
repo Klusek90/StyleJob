@@ -9,10 +9,10 @@
     <div class="row">
         <div class="col inputs col-sm-3">
             <form>
-                <span>number of columns:</span><br>
-                <input type="text" id="col"><br>
-                <span>number of rows:</span><br>
-                <input type="text" id="row"><br/>
+                <span>File Name:</span><br>
+                <input type="text" id="filename"><br>
+                <span>Regular Expresion:</span><br>
+                <input type="text" id="regx"><br/>
                 <button type="button" id="create" class="btn btn-primary">Create</button>
                 <button type="button" id="update" class="btn btn-success">Update</button>
             </form>
@@ -44,5 +44,6 @@
 
 </div>
 <div th:replace="fragments/script :: script"></div>
+<script th:src="@{/job.js}"></script>
 </body>
 </html>
