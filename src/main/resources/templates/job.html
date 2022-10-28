@@ -2,16 +2,47 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head th:replace="fragments/header :: header">
     <meta charset="UTF-8">
-    <title>Job Sheet Creator</title>
+    <title>Job Sheet Creator</title>>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-
-
+<div class="container">
+    <div class="row">
+        <div class="col inputs col-sm-3">
+            <form>
+                <span>number of columns:</span><br>
+                <input type="text" id="col"><br>
+                <span>number of rows:</span><br>
+                <input type="text" id="row"><br/>
+                <button type="button" id="create" class="btn btn-primary">Create</button>
+                <button type="button" id="update" class="btn btn-success">Update</button>
+            </form>
         </div>
-
+<!--        <div class="main col col-sm-6">-->
+<!--            <h5>Column widht in %</h5>-->
+<!--            <div class="colsize"></div>-->
+<!--        </div>-->
     </div>
-    <div th:replace="fragments/script :: script"></div>
+    <div class="row">
+<!--        <div class="tbox col">-->
+<!--            <input type="checkbox" id="sheaders">-->
+<!--            <label for="sheaders">Bold header</label>-->
+<!--            <input type="checkbox" id="solid">-->
+<!--            <label for="solid">Solid boards</label>-->
+<!--            <input type="checkbox" id="align-right">-->
+<!--            <label for="align-right">Last row on the right</label>-->
+<!--        </div>-->
+    </div>
+
+
+    <div class="row">
+        <button id="copybtn" class="btn btn-primary">
+            <i class="fa fa-clone">Copy</i>
+        </button><br>
+        <textarea class="text"> </textarea>
+    </div>
+
+
+</div>
+<div th:replace="fragments/script :: script"></div>
 </body>
 </html>

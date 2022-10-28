@@ -32,36 +32,18 @@ a:hover{
     width: 80%;
     height: 10cm;
 }
+.container{
+    margin-top: 1cm;
+}
+button{
+    margin-top: 13px;
+}
+
 #copybtn{
     width: 2cm;
     display: block;
     float: right;
     margin-right: 19%;
+    margin-top: 20px ;
 }
-.inputs{
-    margin-top: 3cm;
-    margin-bottom: 1cm;
-    width: 23%;
-}
-.right-button{
-    text-align: right;
-    margin-right: 19%;
-    display: block;
-}
-.main{
-    margin-top: 2cm;
-    width: 50%;
-
-}
-span{
-    font-weight: bold;
-}
-.tbox{
-    float: left;
-    margin-left: 11%;
-    margin-bottom: 5%;
-}
-input{
-    width: 1cm;
-
-}
+/*-----------------*/
