@@ -7,7 +7,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col inputs col-sm-3">
+        <div class="col inputs col-sm-6">
                 <span>File Name:</span><br>
                 <input type="text" id="filename"><br>
                 <span>Regular Expresion:</span><br>
@@ -22,10 +22,39 @@
             <button type="button" id="create" class="btn btn-primary">Create</button>
             <button type="button" id="update" class="btn btn-success">Update</button>
         </div>
-<!--        <div class="main col col-sm-6">-->
-<!--            <h5>Column widht in %</h5>-->
-<!--            <div class="colsize"></div>-->
-<!--        </div>-->
+        <div class="main col col-sm-6">
+            <h5>processes</h5>
+            <div>
+                <lablel>File Type</lablel>
+                <select id="fdata">
+                    <option>XML</option>
+                    <option>PDF</option>
+                    <option>CSV</option>
+                    <option>TXT</option>
+                    <option>ZIP</option>
+                </select><button id="p1">&gt;</button>
+                <lablel>Process:</lablel>
+                <select class ="dis" id="fdata2"></select><br>
+
+                <br><label>Process 2</label>
+                    <select>
+                        <option></option>
+                        <option>xl2xml.pl</option>
+                        <option>csv.pl</option>
+                        <option>txt-gt.pl</option>
+                        <option>zip</option>
+                    </select>
+            </div>
+            <div>
+                <lablel>New Field</lablel>
+                <select id="opt3">
+                    <option>new-field.pl</option>
+                    <option>new-field.pl2</option>
+                    <option>new-field-conditional.pl</option>
+                    <option>new-field-conditional.pl2</option>
+                </select><br>
+            </div>
+        </div>
     </div>
     <div class="row">
 <!--        <div class="tbox col">-->
@@ -50,5 +79,6 @@
 </div>
 <div th:replace="fragments/script :: script"></div>
 <script th:src="@{/job.js}"></script>
+<script th:src="@{/jobprocesses.js}"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 let regnum=1;
-let click =2
+let click =2;
 
 function create(){
 
@@ -22,8 +22,21 @@ function create(){
         reg4="";
     }
 
+
+    let script = $("#fdata2").val();
+
+
+
+    // let Singprocess =
+    let process = '\n\t\t<process>'+
+                        '\n\t\t\t<position>1</position>'+
+                        '\n\t\t\t<script>'+ script + '</script>'+
+                 '\n\t\t</process>';
+
+
+
     let back = '<?xml version=\"1.0\" encoding=\"UTF-8\"?>'+ '\n<job>'+
-        '\n\t<name>'+name+'</name>' + '\n\t<regex>'+reg1+reg2+reg3+reg4+'</regex>'+ '\n</job>';
+        '\n\t<name>'+name+'</name>' + '\n\t<regex>'+reg1+reg2+reg3+reg4+'</regex>' +'\n\t<processes>' + process +'\n\t</processes>'+'\n</job>';
 
     return back
 };
