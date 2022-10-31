@@ -81,6 +81,7 @@ function addFields(columnsNum){
 }
 
 
+
 $("#create").click(function (){
     let x =$('#col').val();
     let y = $('#row').val()
