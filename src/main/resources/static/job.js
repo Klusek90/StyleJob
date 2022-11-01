@@ -33,6 +33,26 @@ function create(){
                         '\n\t\t\t<script>'+ script + '</script>'+
                  '\n\t\t</process>';
 
+    //------------foppy-----------------
+    let foppy ="";
+    let f = $('#foppy').val();
+    let duplex="";
+    if(f!==""){
+        position =position+1;
+        if (f=== "Foppy"){
+            duplex="";
+        } else{
+            duplex = "\n\t\t\t<duplex>1</duplex>";
+        }
+        foppy= "\n\t\t<process spoils=\"true\">" +
+                "\n\t\t\t<position>"+position+"</position>" +
+                "\n\t\t\t<script>foppy.pl</script>" +
+                "\n\t\t\t<dir>foppy/[path]</dir>" +
+                "\n\t\t\t<xsl>Letters.xsl</xsl>" + duplex +
+                "\n\t\t\t<output-folder>1. data to run/xerox</output-folder>" +
+                "\n\t\t</process>"
+    }
+
     //----------- autopilot ---------------
     let autopilot="";
     let a= $('#autopilot').val();
@@ -76,7 +96,8 @@ function create(){
     }
 
     let job = '<?xml version=\"1.0\" encoding=\"UTF-8\"?>'+ '\n<job>'+
-        '\n\t<name>'+name+'</name>' + '\n\t<regex>'+reg1+reg2+reg3+reg4+'</regex>' +'\n\t<processes>' + process + autopilot+'\n\t</processes>'+'\n</job>';
+        '\n\t<name>'+name+'</name>' + '\n\t<regex>'+reg1+reg2+reg3+reg4+'</regex>' +'\n\t<processes>' +
+        process + foppy+ autopilot+'\n\t</processes>'+'\n</job>';
 
 
 
