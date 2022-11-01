@@ -99,7 +99,7 @@ $('textarea.text').val(details);
 });
 
 
-//-----------on Click update button-----------
+//-----------on Click Update button-----------
 $("#update").click(function (){
     let x =$('#col').val();
     let y = $('#row').val()

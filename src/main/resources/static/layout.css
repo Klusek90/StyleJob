@@ -50,3 +50,14 @@ button{
 .dis {
     display: none;
 }
+.radious {
+    background: lightskyblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    border: white;
+    width: 35px;
+    padding-bottom: 4px;
+    margin-left: 4px;
+}

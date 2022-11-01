@@ -13,7 +13,7 @@
                 <span>Regular Expresion:</span><br>
                 <div><input type="text" id="regx1"><br/></div>
                 <label>numbers behind</label>
-                <div><input type="text" id="regx2"><button class="add btn-success">+</button><button class="del btn-success "> - </button><br/> </div>
+                <div><input type="text" id="regx2"><button class="add radious">+</button><button class="del radious"> - </button><br/> </div>
                <div id="field3" class="dis">
 
                    <input type="text" id="regx3"><br/></div>
@@ -32,7 +32,7 @@
                     <option>CSV</option>
                     <option>TXT</option>
                     <option>ZIP</option>
-                </select><button id="p1">&gt;</button>
+                </select><button id="p1" class="radious">&gt;</button>
                 <lablel>Process:</lablel>
                 <select class ="dis" id="fdata2"></select><br>
 
@@ -54,18 +54,28 @@
                     <option>new-field-conditional.pl2</option>
                 </select><br>
             </div>
+            <div>
+                <lablel>Autopilot</lablel>
+                <select id="autopilot">
+                    <option></option>
+                    <option>Autopilot PS</option>
+                    <option>Autopilot PS  Conti</option>
+                    <option>Autopilot PDF</option>
+                    <option>Autopilot PDF Conti</option>
+                    </select><br>
+            </div>
         </div>
     </div>
-    <div class="row">
+<!--    <div class="row">-->
 <!--        <div class="tbox col">-->
-<!--            <input type="checkbox" id="sheaders">-->
-<!--            <label for="sheaders">Bold header</label>-->
-<!--            <input type="checkbox" id="solid">-->
-<!--            <label for="solid">Solid boards</label>-->
-<!--            <input type="checkbox" id="align-right">-->
-<!--            <label for="align-right">Last row on the right</label>-->
+<!--            <input type="checkbox" id="autopilot">-->
+<!--            <label for="autopilot">Autopliot</label>-->
+<!--            <input type="checkbox" id="foppy">-->
+<!--            <label for="foppy">Foppy</label>-->
+<!--            <input type="checkbox" id="mailcheck">-->
+<!--            <label for="mailcheck">Lat</label>-->
 <!--        </div>-->
-    </div>
+<!--    </div>-->
 
 
     <div class="row">
@@ -79,6 +89,6 @@
 </div>
 <div th:replace="fragments/script :: script"></div>
 <script th:src="@{/job.js}"></script>
-<script th:src="@{/jobprocesses.js}"></script>
+<script th:src="@{/job script/jobprocesses.js}"></script>
 </body>
 </html>
