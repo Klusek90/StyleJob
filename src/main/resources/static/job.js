@@ -34,35 +34,46 @@ function create(){
                  '\n\t\t</process>';
 
     //----------- autopilot ---------------
-    // let a = document.getElementById("autopilot");
+    let autopilot="";
     let a= $('#autopilot').val();
-    let extension="ps";
-    let cont =""
 
-       switch (a){
-           case "Autopilot PDF": extension = "pdf"
-                ;break
-           case "Autopilot PDF Conti":
-               extension = "pdf"
-               cont= '\n\t\t<continuations>' +
-                        '\n\t\t\t<xpath>/data/metadata/quantities/continuations</xpath>' +
-                   '\n\t\t</continuations>'
-               ;break
-           case "Autopilot PS Conti":
-               cont= '\n\t\t\t<continuations>' +
-                   '\n\t\t\t\t<xpath>/data/metadata/quantities/continuations</xpath>' +
-                   '\n\t\t\t</continuations>'
-               ;break
+    if (a!=="") {
+        position = position + 1;
+
+        let extension = "ps";
+        let cont = ""
+
+        switch (a) {
+            case "Autopilot PDF":
+                extension = "pdf"
+                ;
+                break
+            case "Autopilot PDF Conti":
+                extension = "pdf"
+                cont = '\n\t\t<continuations>' +
+                    '\n\t\t\t<xpath>/data/metadata/quantities/continuations</xpath>' +
+                    '\n\t\t</continuations>'
+                ;
+                break
+            case "Autopilot PS Conti":
+                cont = '\n\t\t\t<continuations>' +
+                    '\n\t\t\t\t<xpath>/data/metadata/quantities/continuations</xpath>' +
+                    '\n\t\t\t</continuations>'
+                ;
+                break
         }
 
-    let autopilot = '\n\t\t<process>' +
-                    '\n\t\t\t<position>' + (position + 1) + '</position>' +
-                    '\n\t\t\t<script>Autopilot</script>' +
-                    '\n\t\t\t<application>' + name + '</application>' +
-                    '\n\t\t\t<extension>'+extension+'</extension>' +
-                    '\n\t\t\t<quantity>count(/data/items/item)</quantity>' +
-                    cont+
-                    '\n\t\t</process>';
+           autopilot = '\n\t\t<process>' +
+            '\n\t\t\t<position>' + position + '</position>' +
+            '\n\t\t\t<script>Autopilot</script>' +
+            '\n\t\t\t<application>' + name + '</application>' +
+            '\n\t\t\t<extension>' + extension + '</extension>' +
+            '\n\t\t\t<quantity>count(/data/items/item)</quantity>' +
+            cont +
+            '\n\t\t</process>';
+    }else{
+        autopilot="";
+    }
 
     let job = '<?xml version=\"1.0\" encoding=\"UTF-8\"?>'+ '\n<job>'+
         '\n\t<name>'+name+'</name>' + '\n\t<regex>'+reg1+reg2+reg3+reg4+'</regex>' +'\n\t<processes>' + process + autopilot+'\n\t</processes>'+'\n</job>';
