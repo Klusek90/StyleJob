@@ -1,26 +1,27 @@
 
 
-function create(columnsNum, rowNum, solid, header,list,alignR) {
+function create(columnsNum, rowNum,list) {
 
-    let s;
-    let h;
-    let r;
+    //checkboxes
+    let s = document.getElementById("solid");
+    let h =document.getElementById("sheaders");
+    let r = document.getElementById("align-right");
 
-    if (solid == 1) {
+    if (s.checked==true) {
         s = " border=\"solid\""
     } else {
         s = ""
     }
     ;
 
-    if (header == 1) {
+    if (h.checked==true) {
         h = " font-weight=\"bold\""
     } else {
         h = ""
     }
     ;
 
-    if (alignR == 1) {
+    if (r.checked==true) {
         r = " text-align=\"right\""
     } else{
         r = ""
@@ -29,11 +30,10 @@ function create(columnsNum, rowNum, solid, header,list,alignR) {
 
 
 
-  let columns ="";
-for(let c=1;c<=columnsNum;c++){
-    columns = columns+ '\n\t\t<fo:table-column column-width=\"'+list[c]+'%\"/>';
-
-}
+    let columns ="";
+     for(let c=1;c<=columnsNum;c++){
+        columns = columns+ '\n\t\t<fo:table-column column-width=\"'+list[c]+'%\"/>';
+        }
 
     let rows= "";
 
@@ -85,33 +85,6 @@ function addFields(columnsNum){
 $("#create").click(function (){
     let x =$('#col').val();
     let y = $('#row').val()
-    let s;
-    let h;
-    let r;
-
-
-    let solid = document.getElementById("solid");
-    let header =document.getElementById("sheaders");
-    let right = document.getElementById("align-right")
-
-    if (solid.checked==true){
-        s = 1
-    }else {
-        s = 0
-    }
-
-    if (header.checked==true){
-        h = 1
-    }else {
-        h = 0
-    }
-
-    if (right.checked==true){
-        r = 1
-    }else {
-        r = 0
-    }
-
 
     colList = [];
     for (let i =1; i<=x;i++){
@@ -119,42 +92,15 @@ $("#create").click(function (){
     };
 
     addFields(x);
-    let details = create(x,y,s,h,colList,r);
+    let details = create(x,y,colList);
 $('textarea.text').val(details);
 
-// $("#title").css("display", "block")
 });
 
 
 $("#update").click(function (){
     let x =$('#col').val();
     let y = $('#row').val()
-    let s;
-    let h;
-    let r;
-
-
-    let solid = document.getElementById("solid");
-    let header =document.getElementById("sheaders");
-    let right = document.getElementById("align-right")
-
-    if (solid.checked==true){
-        s = 1
-    }else {
-        s = 0
-    }
-
-    if (header.checked==true){
-        h = 1
-    }else {
-        h = 0
-    }
-
-    if (right.checked==true){
-        r = 1
-    }else {
-        r = 0
-    }
 
 
     colList = [];
@@ -162,11 +108,7 @@ $("#update").click(function (){
         colList[i]= $('#colsize'+i).val();
     };
 
-    let details = create(x,y,s,h,colList,r);
+    let details = create(x,y,colList);
     $('textarea.text').val(details);
-
-    for (let i =1; i<=x;i++){
-        $("#colsize"+i) = colList[i];
-    };
 
 });

@@ -64,6 +64,8 @@ console.log(click);
 
 $("#create").click(function () {
 
+
+
     let details =create() ;
     $('textarea.text').val(details);
 
