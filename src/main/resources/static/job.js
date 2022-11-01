@@ -4,6 +4,8 @@ let click =2;
 function create(){
 
     let name= $("#filename").val();
+
+    //----------regular expresion------------
     let reg1= $("#regx1").val();
     let reg2= $("#regx2").val().length;
     reg2='\\d{'+reg2+'}';
@@ -22,12 +24,9 @@ function create(){
         reg4="";
     }
 
-
+    //---------script and process 1---------
     let script = $("#fdata2").val();
 
-
-
-    // let Singprocess =
     let process = '\n\t\t<process>'+
                         '\n\t\t\t<position>1</position>'+
                         '\n\t\t\t<script>'+ script + '</script>'+

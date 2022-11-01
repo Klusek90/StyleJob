@@ -2,7 +2,7 @@
 
 function create(columnsNum, rowNum,list) {
 
-    //checkboxes
+    //--------checkboxes-----------
     let s = document.getElementById("solid");
     let h =document.getElementById("sheaders");
     let r = document.getElementById("align-right");
@@ -29,7 +29,7 @@ function create(columnsNum, rowNum,list) {
 
 
 
-
+ ///--------table body creation--------
     let columns ="";
      for(let c=1;c<=columnsNum;c++){
         columns = columns+ '\n\t\t<fo:table-column column-width=\"'+list[c]+'%\"/>';
@@ -74,6 +74,7 @@ function create(columnsNum, rowNum,list) {
 return tab;
 }
 
+
 function addFields(columnsNum){
     $(".colsize").html("");
     for(let x =1;x<=columnsNum;x++ ){
@@ -81,7 +82,7 @@ function addFields(columnsNum){
 }
 
 
-
+// ----------- on click Create button-----------
 $("#create").click(function (){
     let x =$('#col').val();
     let y = $('#row').val()
@@ -98,6 +99,7 @@ $('textarea.text').val(details);
 });
 
 
+//-----------on Click update button-----------
 $("#update").click(function (){
     let x =$('#col').val();
     let y = $('#row').val()
