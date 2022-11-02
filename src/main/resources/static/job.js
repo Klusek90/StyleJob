@@ -33,12 +33,70 @@ function create(){
                         '\n\t\t\t<script>'+ script + '</script>'+
                  '\n\t\t</process>';
 
+    //----------------mail sort---------------------
+    let mailsort = "";
+    let fields =""
+    let m= $("#mailsort").val();
+     if(m!==""){
+         let template = "TNT DSA Mailmark W"
+         let fieldnum= 8;
+         let sort ="";
+
+         if(m==="DSA 8 (10 fields)"){
+             template= "TNT DSA Mailmark W";
+             fieldnum =10
+         }
+         for (let i=2;i<fieldnum;i++){
+             fields+='\n\t\t\t\t</field>' +
+                     '\n\t\t\t\t\t<position>'+(i+1)+'</position>' +
+                     '\n\t\t\t\t\t<xpath>field'+(i+2)+'</xpath>' +
+                     '\n\t\t\t\t</field>';
+         }
+
+
+         let body =  '\n\t\t\t<delimiter>|</delimiter>' +
+                     '\n\t\t\t<template>'+template+'</template>' +
+                     '\n\t\t\t<fields>' +
+                     '\n\t\t\t\t<field>' +
+                     '\n\t\t\t\t\t<position>1</position>' +
+                     '\n\t\t\t\t\t<xpath>urn</xpath>' +
+                     '\n\t\t\t\t</field>' +
+                     '\n\t\t\t\t\t<position>2</position>' +
+                     '\n\t\t\t\t\t<xpath>uuid</xpath>' +
+                     '\n\t\t\t\t</field>'+ fields+
+                     '\n\t\t\t</fields>';
+
+         let headPre= '\n\t\t<process>'+
+                       '\n\t\t\t<position>'+(position+1)+'</position>' +
+                      '\n\t\t\t<script>pre-mailsort.pl</script>'+ body+
+                      '\n\t\t</process>'
+         let headPost='\n\t\t<process>'+
+                      '\n\t\t\t<position>'+(position+4)+'</position>' +
+                      '\n\t\t\t<script>pre-mailsort.pl</script>'+ body+
+                      '\n\t\t</process>';
+
+       let matchcode= "\n\t\t<process>" +
+                    "\n\t\t\t<position>"+(position+2)+"</position>" +
+                    "\n\t\t\t<script>Matchcode</script>" +
+                    "\n\t\t</process>" +
+                    "\n\t\t<process>" +
+                    "\n\t\t\t<position>"+(position+3)+"</position>" +
+                    "\n\t\t\t<script>Sortcode</script>" +
+                    "\n\t\t</process>";
+
+        position+=4;
+         mailsort =headPre + matchcode + headPost;
+
+     }else{
+         mailsort ="";
+     }
+
     //------------foppy-----------------
     let foppy ="";
     let f = $('#foppy').val();
     let duplex="";
     if(f!==""){
-        position =position+1;
+        position +=1;
         if (f=== "Foppy"){
             duplex="";
         } else{
@@ -58,7 +116,7 @@ function create(){
     let a= $('#autopilot').val();
 
     if (a!=="") {
-        position = position + 1;
+        position +=1;
 
         let extension = "ps";
         let cont = ""
@@ -97,7 +155,7 @@ function create(){
 
     let job = '<?xml version=\"1.0\" encoding=\"UTF-8\"?>'+ '\n<job>'+
         '\n\t<name>'+name+'</name>' + '\n\t<regex>'+reg1+reg2+reg3+reg4+'</regex>' +'\n\t<processes>' +
-        process + foppy+ autopilot+'\n\t</processes>'+'\n</job>';
+        process + mailsort+ foppy+ autopilot+'\n\t</processes>'+'\n</job>';
 
 
 

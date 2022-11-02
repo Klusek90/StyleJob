@@ -23,9 +23,9 @@
 <!--            <button type="button" id="update" class="btn btn-success">Update</button>-->
         </div>
         <div class="main col col-sm-6">
-            <h5>processes</h5>
-            <div>
-                <lablel>File Type</lablel>
+            <h5>Create processes:</h5>
+            <div class="selection">
+                <label>File Type</label>
                 <select id="fdata">
                     <option>XML</option>
                     <option>PDF</option>
@@ -33,35 +33,42 @@
                     <option>TXT</option>
                     <option>ZIP</option>
                 </select><button id="p1" class="radious">&gt;</button>
-                <lablel>Process:</lablel>
-                <select class ="dis" id="fdata2"></select><br>
+                <lablel>Process 1:</lablel>
+                <select class ="dis" id="fdata2"></select></br>
 
-                <br><label>Foppy</label>
-                    <select id="foppy">
-                        <option></option>
-                        <option>Foppy</option>
-                        <option>Foppy Duplex</option>
-                    </select>
-            </div>
-<!--            <div>-->
-<!--                <lablel>New Field</lablel>-->
-<!--                <select id="opt3">-->
-<!--                    <option>new-field.pl</option>-->
-<!--                    <option>new-field.pl2</option>-->
-<!--                    <option>new-field-conditional.pl</option>-->
-<!--                    <option>new-field-conditional.pl2</option>-->
-<!--                </select><br>-->
-<!--            </div>-->
-            <div>
-                <lablel>Autopilot</lablel>
+                <label>New Field</label>
+                <select>
+                    <option></option>
+                    <option>new-field.pl</option>
+                    <option>new-field.pl2</option>
+                    <option>new-field-conditional.pl</option>
+                    <option>new-field-conditional.pl2</option>
+                </select><br>
+
+                <label>Mailsort</label>
+                <select id="mailsort">
+                    <option></option>
+                    <option>DSA   (8  fields)</option>
+                    <option>DSA 8 (10 fields)</option>
+                </select><br>
+
+                <label>Foppy</label>
+                <select id="foppy">
+                    <option></option>
+                    <option>Foppy</option>
+                    <option>Foppy Duplex</option>
+                </select></br>
+
+                <label>Autopilot</label>
                 <select id="autopilot">
                     <option></option>
                     <option>Autopilot PS</option>
                     <option>Autopilot PS  Conti</option>
                     <option>Autopilot PDF</option>
                     <option>Autopilot PDF Conti</option>
-                    </select><br>
+                </select><br>
             </div>
+
         </div>
     </div>
 <!--    <div class="row">-->

@@ -1,3 +1,11 @@
+body{
+    background: black;
+    color: wheat;
+}
+input, textarea, select{
+    background: black;
+    color: white;
+}
 .block{
     width: 2.5cm;
     height: 3cm;
@@ -60,4 +68,14 @@ button{
     width: 35px;
     padding-bottom: 4px;
     margin-left: 4px;
+    margin-top: 0px;
+}
+.selection select{
+    margin-left: 5em;
+}
+.selection label{
+    position: absolute;
+}
+#fdata2{
+    margin-left: 5px;
 }
