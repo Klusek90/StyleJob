@@ -5,7 +5,6 @@ body{
 input, textarea, select{
     background: black;
     color: white;
-    /*coment*/
 }
 .block{
     width: 2.5cm;
@@ -79,4 +78,17 @@ button{
 }
 #fdata2{
     margin-left: 5px;
+}
+
+.draggable{
+    width: 1cm;
+    height: 1cm;
+    background: red;
+}
+.dragging{
+    background: dodgerblue;
+}
+
+.boxcont{
+    background: goldenrod;
 }
