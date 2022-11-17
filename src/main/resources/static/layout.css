@@ -81,14 +81,13 @@ button{
 }
 
 .draggable{
-    width: 1cm;
-    height: 1cm;
-    background: red;
+    background: green;
+    width: 3cm;
+    margin-left: 2mm;
 }
 .dragging{
-    background: dodgerblue;
+    background: darkslategray;
 }
 
 .boxcont{
-    background: goldenrod;
 }
