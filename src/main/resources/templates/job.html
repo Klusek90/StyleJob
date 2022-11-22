@@ -20,80 +20,22 @@
                <div id="field4" class="dis">
                    <input type="text" id="regx4"> </div>
             <button type="button" id="create" class="btn btn-success">Create</button>
-<!--            <button type="button" id="update" class="btn btn-success">Update</button>-->
         </div>
 
 
 
         <div class="col col-sm-8">
-            <div class="boxcont">
-                <p class="draggable" draggable="true">XML</p>
-                <p class="draggable" draggable="true">Report.pl</p>
+            <div class="boxcont jobStructure">
+                <p class="draggable" draggable="true">Reset</p>
+                <p class="draggable" draggable="true">Chain</p>
                 <p class="draggable" draggable="true">Mailsort</p>
                 <p class="draggable" draggable="true">Autopilot</p>
             </div>
-            <!--        // code for choosing options-->
-<!--            <h5>Create processes:</h5>-->
-<!--            <div class="selection">-->
-<!--                <label>File Type</label>-->
-<!--                <select id="fdata">-->
-<!--                    <option>XML</option>-->
-<!--                    <option>PDF</option>-->
-<!--                    <option>CSV</option>-->
-<!--                    <option>TXT</option>-->
-<!--                    <option>ZIP</option>-->
-<!--                </select><button id="p1" class="radious">&gt;</button>-->
-<!--                <lablel>Process 1:</lablel>-->
-<!--                <select class ="dis" id="fdata2"></select></br>-->
-
-<!--                <label>New Field</label>-->
-<!--                <select>-->
-<!--                    <option></option>-->
-<!--                    <option>new-field.pl</option>-->
-<!--                    <option>new-field.pl2</option>-->
-<!--                    <option>new-field-conditional.pl</option>-->
-<!--                    <option>new-field-conditional.pl2</option>-->
-<!--                </select><br>-->
-
-<!--                <label>Mailsort</label>-->
-<!--                <select id="mailsort">-->
-<!--                    <option></option>-->
-<!--                    <option>DSA   (8  fields)</option>-->
-<!--                    <option>DSA 8 (10 fields)</option>-->
-<!--                </select><br>-->
-
-<!--                <label>Foppy</label>-->
-<!--                <select id="foppy">-->
-<!--                    <option></option>-->
-<!--                    <option>Foppy</option>-->
-<!--                    <option>Foppy Duplex</option>-->
-<!--                </select></br>-->
-
-<!--                <label>Autopilot</label>-->
-<!--                <select id="autopilot">-->
-<!--                    <option></option>-->
-<!--                    <option>Autopilot PS</option>-->
-<!--                    <option>Autopilot PS  Conti</option>-->
-<!--                    <option>Autopilot PDF</option>-->
-<!--                    <option>Autopilot PDF Conti</option>-->
-<!--                </select><br>-->
-<!--            </div>-->
-
         </div>
 
     </div>
-<!--    <div class="row">-->
-<!--        <div class="tbox col">-->
-<!--            <input type="checkbox" id="autopilot">-->
-<!--            <label for="autopilot">Autopliot</label>-->
-<!--            <input type="checkbox" id="foppy">-->
-<!--            <label for="foppy">Foppy</label>-->
-<!--            <input type="checkbox" id="mailcheck">-->
-<!--            <label for="mailcheck">Lat</label>-->
-<!--        </div>-->
-<!--    </div>-->
     <div class="row boxcont">
-        <h6>Job script: </h6><p class="draggable" draggable="true"> reset </p><p class="draggable" draggable="true"> txt</p><p class="draggable" draggable="true"> csv</p>
+        <h6>Job script: </h6><p class="draggable" draggable="true">Foppy</p><p class="draggable" draggable="true"> txt</p><p class="draggable" draggable="true"> csv</p>
     </div>
     <div class="row boxcont">
         <h6>Reports: </h6><p class="draggable" draggable="true"> report</p><p class="draggable" draggable="true"> report2 </p><p class="draggable" draggable="true"> report3</p><br>
@@ -113,7 +55,7 @@
 
 </div>
 <div th:replace="fragments/script :: script"></div>
-<script th:src="@{/job.js}"></script>
+<script th:src="@{/createJobStructure.js}"></script>
 <script th:src="@{/job script/jobprocesses.js}"></script>
 </body>
 </html>

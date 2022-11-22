@@ -155,7 +155,7 @@ function create(){
 
     let job = '<?xml version=\"1.0\" encoding=\"UTF-8\"?>'+ '\n<job>'+
         '\n\t<name>'+name+'</name>' + '\n\t<regex>'+reg1+reg2+reg3+reg4+'</regex>' +'\n\t<processes>' +
-        process + mailsort+ foppy+ autopilot+'\n\t</processes>'+'\n</job>';
+        body +'\n\t</processes>'+'\n</job>';
 
 
 
