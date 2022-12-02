@@ -1,0 +1,52 @@
+.dis {
+    display: none;
+}
+.radious {
+    background: lightskyblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    border: white;
+    width: 35px;
+    padding-bottom: 4px;
+    margin-left: 4px;
+    margin-top: 0px;
+}
+.selection select{
+    margin-left: 5em;
+}
+.selection label{
+    position: absolute;
+}
+#fdata2{
+    margin-left: 5px;
+}
+
+.draggable{
+    font-weight: bold;
+    background-image: url(/img/mini.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 3cm;
+    margin-left: 2mm;
+    height: 1.5cm;
+    text-align: center;
+    padding-top: 5mm;
+    color: black;
+}
+.dragging{
+    background-image: url(/img/mini2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.jobStructure > p{
+    margin-top: -0.9cm;
+    margin-left: 3cm;
+    background-image: url(/img/mini3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+

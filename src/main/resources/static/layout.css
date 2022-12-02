@@ -1,6 +1,7 @@
 body{
     background: black;
     color: wheat;
+
 }
 input, textarea, select{
     background: black;
@@ -55,39 +56,4 @@ button{
     margin-top: 20px ;
 }
 /*-----------------*/
-.dis {
-    display: none;
-}
-.radious {
-    background: lightskyblue;
-    color: white;
-    border-radius: 8px;
-    font-size: 19px;
-    font-weight: bold;
-    border: white;
-    width: 35px;
-    padding-bottom: 4px;
-    margin-left: 4px;
-    margin-top: 0px;
-}
-.selection select{
-    margin-left: 5em;
-}
-.selection label{
-    position: absolute;
-}
-#fdata2{
-    margin-left: 5px;
-}
 
-.draggable{
-    background: green;
-    width: 3cm;
-    margin-left: 2mm;
-}
-.dragging{
-    background: darkslategray;
-}
-
-.boxcont{
-}
