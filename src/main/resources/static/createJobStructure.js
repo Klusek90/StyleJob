@@ -2,7 +2,7 @@
 $("#create").click(function (){
 
     let code="";
-    for (let i =1;i < 10; i++){
+    for (let i =1;i < 15; i++){
         code += checkSequence(i,i)
     }
 
@@ -259,18 +259,27 @@ function checkSequence(child, position){
                     "\t\t\t\t</field>\n" +
                     "\t\t\t</fields>\n" +
                     "\t\t</process>"
-            position = position+3;
             ;break
 
         case "Split":
             code = "\n\t\t<process>\n" +
-                "\t\t\t<position>"+position+"</position>\n" +
-                "\t\t\t<script>split-quantity.pl</script>\n" +
-                "\t\t\t<quantity>5000</quantity>\n" +
-                "\t\t\t<oldpart>[append]</oldpart>\n" +
-                "\t\t\t<newpart>_[index]</newpart>\n" +
-                "\t\t\t</process>"
+                    "\t\t\t<position>"+position+"</position>\n" +
+                    "\t\t\t<script>split-quantity.pl</script>\n" +
+                    "\t\t\t<quantity>5000</quantity>\n" +
+                    "\t\t\t<oldpart>[append]</oldpart>\n" +
+                    "\t\t\t<newpart>_[index]</newpart>\n" +
+                    "\t\t\t</process>"
             ;break
+        case "PDF":
+            code = "\n\t\t<process>\n" +
+                    "\t\t\t<position>"+position+"</position>\n" +
+                    "\t\t\t<script>pdf-2.5.pl</script>\n" +
+                    "\t\t\t<duplex>1</duplex>\n" +
+                    "\t\t\t<dir>BTS PTX Animal Friends</dir>\n" +
+                    "\t\t\t<xsl>cheques.xsl</xsl>\n" +
+                    "\t\t\t<output-folder>1. data to run/pdf</output-folder>\n" +
+                    "\t\t</process>"
+            ; break
         default: code=""; break
 
 
