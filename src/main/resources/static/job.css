@@ -25,28 +25,42 @@
 
 .draggable{
     font-weight: bold;
-    background-image: url(/img/mini.png);
-    background-position: center;
-    background-repeat: no-repeat;
     width: 3cm;
     margin-left: 2mm;
     height: 1.5cm;
     text-align: center;
     padding-top: 5mm;
     color: black;
+
 }
-.dragging{
-    background-image: url(/img/mini2.png);
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 
 .jobStructure > p{
     margin-top: -0.9cm;
     margin-left: 3cm;
-    background-image: url(/img/mini3.png);
+}
+
+.yell{
+    background-image: url(/img/miniYell.png);
     background-position: center;
     background-repeat: no-repeat;
-
 }
+.blue{
+    background-image: url(/img/miniBlue.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.green{
+    background-image: url(/img/miniGreen.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.process >p {
+    float: left;
+}
+.jobs >p {
+    float: left;
+}
+
 

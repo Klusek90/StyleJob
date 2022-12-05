@@ -2,8 +2,20 @@
 $("#create").click(function (){
 
     let code="";
-    for (let i =1;i < 15; i++){
-        code += checkSequence(i,i)
+
+    let job =$(".jobStructure").children(":first").html()
+
+    console.log(job)
+
+    for (let i =2;i < 15; i++){
+        if (code.includes("mailsort"))
+        {
+            code += checkSequence(i,i+3)
+        }
+        else
+        {
+            code += checkSequence(i,i)
+        }
     }
 
     let wrap =document.getElementById("wraper");

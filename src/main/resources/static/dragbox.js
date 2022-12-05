@@ -1,6 +1,7 @@
 const draggables = document.querySelectorAll('.draggable')
 const containers= document.querySelectorAll('.boxcont')
 
+
 draggables.forEach(draggable =>{
     draggable.addEventListener('dragstart',()=>{
         draggable.classList.add('dragging')
@@ -17,8 +18,11 @@ containers.forEach( container => {
 
         const afterElement= getDragAfter(container,e.clientY)
         const draggable = document.querySelector('.dragging')
-                if(afterElement ==null){
-                container.appendChild(draggable)
+
+
+
+                if(afterElement ==null) {
+                    container.appendChild(draggable)
                 }else{
                     container.insertBefore(draggable, afterElement)
                 }
