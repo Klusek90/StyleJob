@@ -127,8 +127,8 @@ function checkSequence(child, position){
                     "\t\t\t</fields>\n" +
                     "\t\t</process>"
             ;break
-        case "PostScript-Xerox-Opt":
-            code = "\t\t<process spoils=\"true\">\n" +
+        case "PostScript":
+            code = "\n\t\t<process spoils=\"true\">\n" +
                     "\t\t\t<position>"+position+"</position>\n" +
                     "\t\t\t<script>postscript-xerox-opt.pl</script>\n" +
                     "\t\t\t<dir>"+name+"</dir>\n" +
@@ -259,6 +259,17 @@ function checkSequence(child, position){
                     "\t\t\t\t</field>\n" +
                     "\t\t\t</fields>\n" +
                     "\t\t</process>"
+            position = position+3;
+            ;break
+
+        case "Split":
+            code = "\n\t\t<process>\n" +
+                "\t\t\t<position>"+position+"</position>\n" +
+                "\t\t\t<script>split-quantity.pl</script>\n" +
+                "\t\t\t<quantity>5000</quantity>\n" +
+                "\t\t\t<oldpart>[append]</oldpart>\n" +
+                "\t\t\t<newpart>_[index]</newpart>\n" +
+                "\t\t\t</process>"
             ;break
         default: code=""; break
 
