@@ -1,3 +1,4 @@
+
 .dis {
     display: none;
 }
@@ -24,34 +25,50 @@
 }
 
 .draggable{
-    font-weight: bold;
+    font-weight: 600;
     width: 3cm;
     margin-left: 2mm;
-    height: 1.5cm;
+    height: 3cm;
     text-align: center;
     padding-top: 5mm;
-    color: black;
-
+    color: #080068;
+    font-family: cursive;
+    margin-top: -12px;
 }
 
 
 .jobStructure > p{
-    margin-top: -0.9cm;
+    margin-top: -1cm;
     margin-left: 3cm;
 }
 
-.yell{
-    background-image: url(/img/miniYell.png);
+.yell1{
+    background-image: url(/img/yell4.png);
+    background-size: 113px;
     background-position: center;
     background-repeat: no-repeat;
 }
-.blue{
-    background-image: url(/img/miniBlue.png);
+.yell2{
+    background-image: url(/img/yell5.png);
+    background-size: 113px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.yell3{
+    background-image: url(/img/yell6.png);
+    background-size: 113px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.red{
+    background-image: url(/img/r2.png);
+    background-size: 113px;
     background-position: center;
     background-repeat: no-repeat;
 }
 .green{
-    background-image: url(/img/miniGreen.png);
+    background-image: url(/img/g4.png);
+    background-size: 113px;
     background-position: center;
     background-repeat: no-repeat;
 }

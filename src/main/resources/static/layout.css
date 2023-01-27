@@ -1,11 +1,16 @@
 body{
-    background: black;
-    color: wheat;
-
+    background-color: #F5F5F5;
+    color:black;
 }
+
 input, textarea, select{
-    background: black;
-    color: white;
+    background: #F1F1F1;
+    color: black;
+    border-radius: 9px;
+    height: 1cm;
+    padding-left: 13px;
+    font-size: 15pt;
+    font-family: monospace;
 }
 .block{
     width: 2.5cm;
