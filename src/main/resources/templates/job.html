@@ -28,7 +28,7 @@
             <input type="checkbox" id="wraper">
             <label for="wraper">Wrapper</label>
             <div class="boxcont jobStructure">
-                <p class="draggable green" draggable="true">Reset</p>
+                <p class="draggable green" draggable="true">Job</p>
 
 
 
@@ -39,18 +39,25 @@
     <div class="row">
         <div class="col col-sm-6 boxcont process">
             <h6>Processes: </h6>
-            <p class="draggable yell" draggable="true">Foppy</p><p class="draggable yell" draggable="true">PDF</p><p class="draggable yell" draggable="true">PostScript</p>
+            <p class="draggable yell" draggable="true">Foppy</p><p class="draggable yell" draggable="true">PDF 2.5</p><p class="draggable yell" draggable="true">PostScript</p>
 
-            <p class="draggable yell" draggable="true">Mailcheck</p><p class="draggable yell" draggable="true">Report</p><p class="draggable yell" draggable="true">LookUp</p>
+            <p class="draggable yell" draggable="true" style="font-size: 8pt">Mailcheck <br>(MCK)</p><p class="draggable yell" draggable="true">Report</p><p class="draggable yell" draggable="true">LookUp</p>
 
             <p class="draggable yell" draggable="true">?</p><p class="draggable yell" draggable="true">Split</p><p class="draggable yell" draggable="true">MailSort</p>
 
             <p class="draggable yell" draggable="true">Autopilot</p><p class="draggable green" draggable="true">Chain</p>
         </div>
         <div class="col col-sm-6 boxcont jobs">
-            <h6>Jobs: </h6>
-            <p class="draggable blue J" draggable="true">Job1</p><p class="draggable blue J" draggable="true">Job2</p>
-            <p class="draggable blue J" draggable="true">Job3</p><p class="draggable blue J" draggable="true">Job4</p><p class="draggable blue" draggable="true">Job1</p>
+            <h6>Jobs Script: </h6>
+            <select name="1stScript" id="1stScript">
+                <option value="Reset">Reset</option>
+                <option value="xl2xml.pl">xl2xml.pl</option>
+                <option value="csv-header.pl">csv-header.pl</option>
+                <option value="csv.pl">csv.pl</option>
+                <option value="csv-pipe.pl">csv-pipe.pl</option>
+                <option value="line-data-header-ff.pl">line-data-header-ff.pl</option>
+                <option value="txt-gt.pl">txt-gt.pl</option>
+            </select>
         </div>
     </div>
 

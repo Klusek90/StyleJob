@@ -1,7 +1,15 @@
 
 $("#create").click(function (){
 
-    let code="";
+    let select= $("#1stScript option:selected").val()
+    let code="\n\t\t<process>\n" +
+        "\t\t\t<position>"+1+"</position>\n" +
+        "\t\t\t<script>"+select+"</script>\n" +
+        "\t\t</process>";
+
+    console.log($("1stScript").val())
+
+
 
     let job =$(".jobStructure").children(":first").html()
 
@@ -14,6 +22,7 @@ $("#create").click(function (){
         }
         else
         {
+
             code += checkSequence(i,i)
         }
     }
@@ -98,7 +107,7 @@ function checkSequence(child, position){
                 "\n\t\t\t\t</lines>" +
                 "\n\t\t</process>";
             break
-        case "Mailcheck":
+        case "Mailcheck (MCK)":
             code= "\n\t\t<process>\n" +
                     "\t\t\t<position>"+position+"</position>\n" +
                     "\t\t\t<script>mailcheck.pl</script>\n" +
@@ -282,7 +291,7 @@ function checkSequence(child, position){
                     "\t\t\t<newpart>_[index]</newpart>\n" +
                     "\t\t\t</process>"
             ;break
-        case "PDF":
+        case "PDF 2.5":
             code = "\n\t\t<process>\n" +
                     "\t\t\t<position>"+position+"</position>\n" +
                     "\t\t\t<script>pdf-2.5.pl</script>\n" +
@@ -292,9 +301,14 @@ function checkSequence(child, position){
                     "\t\t\t<output-folder>1. data to run/pdf</output-folder>\n" +
                     "\t\t</process>"
             ; break
+
+        // case "XL2XL":
+        //     code = "\n\t\t<process>\n" +
+        //         "\t\t\t<position>"+position+"</position>\n" +
+        //         "\t\t\t<script>xl2xml.pl</script>\n" +
+        //         "\t\t</process>"
+        //     ; break
         default: code=""; break
-
-
     }
     return code
 }
