@@ -65,9 +65,9 @@ function create(columnsNum, rowNum,list) {
     let tab = '<fo:block-container font-size=\"8.5pt\"'+s+'>' +
         '\n\t<fo:table>' +
         columns +
-        '\n\t\t<fo:body>' +
+        '\n\t\t<fo:table-body>' +
         rows +
-        '\n\t\t</fo:body>' +
+        '\n\t\t</fo:table-body>' +
         '\n\t</fo:table>' +
         '\n</fo:block-container>';
 

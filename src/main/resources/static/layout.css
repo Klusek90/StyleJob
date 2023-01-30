@@ -1,11 +1,16 @@
 body{
-    background: black;
-    color: wheat;
+    background-color: #F5F5F5;
+    color:black;
 }
+
 input, textarea, select{
-    background: black;
-    color: white;
-    /*coment*/
+    background: #F1F1F1;
+    color: black;
+    border-radius: 9px;
+    height: 1cm;
+    padding-left: 13px;
+    font-size: 15pt;
+    font-family: monospace;
 }
 .block{
     width: 2.5cm;
@@ -56,27 +61,4 @@ button{
     margin-top: 20px ;
 }
 /*-----------------*/
-.dis {
-    display: none;
-}
-.radious {
-    background: lightskyblue;
-    color: white;
-    border-radius: 8px;
-    font-size: 19px;
-    font-weight: bold;
-    border: white;
-    width: 35px;
-    padding-bottom: 4px;
-    margin-left: 4px;
-    margin-top: 0px;
-}
-.selection select{
-    margin-left: 5em;
-}
-.selection label{
-    position: absolute;
-}
-#fdata2{
-    margin-left: 5px;
-}
+

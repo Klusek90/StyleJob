@@ -1,0 +1,91 @@
+
+.dis {
+    display: none;
+}
+.radious {
+    background: lightskyblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    border: white;
+    width: 35px;
+    padding-bottom: 4px;
+    margin-left: 4px;
+    margin-top: 0px;
+}
+.selection select{
+    margin-left: 5em;
+}
+.selection label{
+    position: absolute;
+}
+#fdata2{
+    margin-left: 5px;
+}
+
+.draggable{
+    font-weight: 600;
+    width: 3cm;
+    margin-left: 2mm;
+    height: 3cm;
+    text-align: center;
+    padding-top: 5mm;
+    color: #080068;
+    font-family: cursive;
+    margin-top: -12px;
+}
+.jobStructure{
+    margin-top: 1cm;
+}
+
+.jobStructure > p{
+    margin-top: -1cm;
+    margin-left: 3cm;
+}
+
+.yell1{
+    background-image: url(/job/img/yell4.png);
+    background-size: 113px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.yell2{
+    background-image: url(/job/img/yell5.png);
+    background-size: 113px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.yell3{
+    background-image: url(/job/img/yell6.png);
+    background-size: 113px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.red{
+    background-image: url(/job/img/r2.png);
+    background-size: 113px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.green{
+    background-image: url(/job/img/g4.png);
+    background-size: 113px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.process{
+    margin-top: 1cm;
+}
+.process >p {
+    float: left;
+}
+.jobs >p {
+    float: left;
+}
+input#wraper{
+    margin-right: 1cm;
+    font-size: 17pt;
+}
+
