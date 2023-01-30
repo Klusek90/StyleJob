@@ -7,86 +7,86 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col inputs col-sm-6">
+        <div class="col inputs col-sm-4">
                 <span>File Name:</span><br>
                 <input type="text" id="filename"><br>
                 <span>Regular Expresion:</span><br>
                 <div><input type="text" id="regx1"><br/></div>
                 <label>numbers behind</label>
                 <div><input type="text" id="regx2"><button class="add radious">+</button><button class="del radious"> - </button><br/> </div>
+                </br>
+                <h6>Jobs Script: </h6>
+                <select name="1stScript" id="1stScript">
+                    <option value="Reset">Reset</option>
+                    <option value="xl2xml.pl">xl2xml.pl</option>
+                    <option value="csv-header.pl">csv-header.pl</option>
+                    <option value="csv.pl">csv.pl</option>
+                    <option value="csv-pipe.pl">csv-pipe.pl</option>
+                    <option value="line-data-header-ff.pl">line-data-header-ff.pl</option>
+                    <option value="txt-gt.pl">txt-gt.pl</option>
+                </select>
+            </br>
                <div id="field3" class="dis">
 
                    <input type="text" id="regx3"><br/></div>
                <div id="field4" class="dis">
                    <input type="text" id="regx4"> </div>
-            <button type="button" id="create" class="btn btn-success">Create</button>
-<!--            <button type="button" id="update" class="btn btn-success">Update</button>-->
-        </div>
-        <div class="main col col-sm-6">
-            <h5>processes</h5>
-            <div>
-                <lablel>File Type</lablel>
-                <select id="fdata">
-                    <option>XML</option>
-                    <option>PDF</option>
-                    <option>CSV</option>
-                    <option>TXT</option>
-                    <option>ZIP</option>
-                </select><button id="p1" class="radious">&gt;</button>
-                <lablel>Process:</lablel>
-                <select class ="dis" id="fdata2"></select><br>
 
-                <br><label>Foppy</label>
-                    <select id="foppy">
-                        <option></option>
-                        <option>Foppy</option>
-                        <option>Foppy Duplex</option>
-                    </select>
+            <label for="extenstion">Extension</label>
+            <select id="extenstion">
+                <option value="Pdf">Pdf</option>
+                <option value="Ps">Ps</option>
+            </select>
+
+            <label for="duplex">Wrapper</label>
+            <select id="duplex">
+                <option value="No">No</option>
+                <option value="Yes">Yes</option>
+            </select>
+
+            <button type="button" id="create" class="btn btn-success">Create</button>
+
+
+        </div>
+
+
+
+        <div class="col col-sm-8">
+
+            <div class="boxcont jobStructure">
+                <p class="draggable red" draggable="true">Job</p>
             </div>
-<!--            <div>-->
-<!--                <lablel>New Field</lablel>-->
-<!--                <select id="opt3">-->
-<!--                    <option>new-field.pl</option>-->
-<!--                    <option>new-field.pl2</option>-->
-<!--                    <option>new-field-conditional.pl</option>-->
-<!--                    <option>new-field-conditional.pl2</option>-->
-<!--                </select><br>-->
-<!--            </div>-->
-            <div>
-                <lablel>Autopilot</lablel>
-                <select id="autopilot">
-                    <option></option>
-                    <option>Autopilot PS</option>
-                    <option>Autopilot PS  Conti</option>
-                    <option>Autopilot PDF</option>
-                    <option>Autopilot PDF Conti</option>
-                    </select><br>
-            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col col-sm-6 boxcont process">
+            <p class="draggable yell2" draggable="true">Foppy</p>
+            <p class="draggable yell1" draggable="true">PDF 2.5</p>
+            <p class="draggable yell3" draggable="true">PostScript</p>
+            <p class="draggable yell1" draggable="true" style="font-size: 11pt;">Mailcheck (MCK)</p>
+            <p class="draggable yell2" draggable="true">Report</p>
+            <p class="draggable yell1" draggable="true">LookUp</p>
+            <p class="draggable yell3" draggable="true">New field</p>
+            <p class="draggable yell1" draggable="true">Split</p>
+            <p class="draggable yell3" draggable="true">MailSort</p>
+            <p class="draggable yell3" draggable="true">Autopilot</p>
+            <p class="draggable green" draggable="true">Chain</p>
         </div>
     </div>
-<!--    <div class="row">-->
-<!--        <div class="tbox col">-->
-<!--            <input type="checkbox" id="autopilot">-->
-<!--            <label for="autopilot">Autopliot</label>-->
-<!--            <input type="checkbox" id="foppy">-->
-<!--            <label for="foppy">Foppy</label>-->
-<!--            <input type="checkbox" id="mailcheck">-->
-<!--            <label for="mailcheck">Lat</label>-->
-<!--        </div>-->
-<!--    </div>-->
-
 
     <div class="row">
-        <button id="copybtn" class="btn btn-primary">
-            <i class="fa fa-clone">Copy</i>
-        </button><br>
-        <textarea class="text"> </textarea>
+        <div class="main col">
+            <button id="copybtn" class="btn btn-primary">
+                <i class="fa fa-clone">Copy</i>
+            </button><br>
+            <textarea class="text" style="width: 80%"> </textarea>
+        </div>
     </div>
-
 
 </div>
 <div th:replace="fragments/script :: script"></div>
-<script th:src="@{/job.js}"></script>
-<script th:src="@{/job script/jobprocesses.js}"></script>
+<script th:src="@{/job/dragbox.js}"></script>
+<script th:src="@{/job/createJobStructure.js}"></script>
 </body>
 </html>

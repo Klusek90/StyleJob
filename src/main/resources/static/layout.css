@@ -1,3 +1,17 @@
+body{
+    background-color: #F5F5F5;
+    color:black;
+}
+
+input, textarea, select{
+    background: #F1F1F1;
+    color: black;
+    border-radius: 9px;
+    height: 1cm;
+    padding-left: 13px;
+    font-size: 15pt;
+    font-family: monospace;
+}
 .block{
     width: 2.5cm;
     height: 3cm;
@@ -47,17 +61,4 @@ button{
     margin-top: 20px ;
 }
 /*-----------------*/
-.dis {
-    display: none;
-}
-.radious {
-    background: lightskyblue;
-    color: white;
-    border-radius: 8px;
-    font-size: 19px;
-    font-weight: bold;
-    border: white;
-    width: 35px;
-    padding-bottom: 4px;
-    margin-left: 4px;
-}
+
