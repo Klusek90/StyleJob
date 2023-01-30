@@ -45,31 +45,31 @@
 }
 
 .yell1{
-    background-image: url(/static/job/img/yell4.png);
+    background-image: url(/job/img/yell4.png);
     background-size: 113px;
     background-position: center;
     background-repeat: no-repeat;
 }
 .yell2{
-    background-image: url(/static/job/img/yell5.png);
+    background-image: url(/job/img/yell5.png);
     background-size: 113px;
     background-position: center;
     background-repeat: no-repeat;
 }
 .yell3{
-    background-image: url(/static/job/img/yell6.png);
+    background-image: url(/job/img/yell6.png);
     background-size: 113px;
     background-position: center;
     background-repeat: no-repeat;
 }
 .red{
-    background-image: url(/static/job/img/r2.png);
+    background-image: url(/job/img/r2.png);
     background-size: 113px;
     background-position: center;
     background-repeat: no-repeat;
 }
 .green{
-    background-image: url(/static/job/img/g4.png);
+    background-image: url(/job/img/g4.png);
     background-size: 113px;
     background-position: center;
     background-repeat: no-repeat;

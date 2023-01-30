@@ -21,18 +21,23 @@ $("#create").click(function (){
             code += checkSequence(i,i)
         }
     }
-
-    //wrapning job with additional information
-    let wrap =document.getElementById("wraper");
-    if (wrap.checked == true)
-    {
-        code = jobDesign(code)
-    }
+    code = jobDesign(code)
     $('textarea.text').val(code)
 
 })
 
 function checkSequence(child, position){
+    let duplex;
+    if($("#duplex option:selected").val()==='Yes'){
+        duplex=1
+    }else { duplex=0 }
+
+    let extension;
+    if($("#extenstion option:selected").val()==='Ps'){
+        extension='ps'
+    }else { extension='pdf' }
+
+
 
     let name= $("#filename").val();
     let compare = $(".jobStructure p:nth-child("+child+")").html()
@@ -43,7 +48,7 @@ function checkSequence(child, position){
                     '\n\t\t\t<position>' + position + '</position>' +
                     '\n\t\t\t<script>Autopilot</script>' +
                     '\n\t\t\t<application>'+name+'</application>' +              //add app name
-                    '\n\t\t\t<extension>PS</extension>' +                       //add extenstion
+                    '\n\t\t\t<extension>'+extension+'</extension>' +                       //add extenstion
                     '\n\t\t\t<quantity>count(/data/items/item)</quantity>'+
                     '\n\t\t</process>';
             break
@@ -53,7 +58,7 @@ function checkSequence(child, position){
                     "\n\t\t\t<script>foppy.pl</script>" +
                     "\n\t\t\t<dir>foppy/"+name+"</dir>" +
                     "\n\t\t\t<xsl>Letters.xsl</xsl>" +
-                    "\n\t\t\t<duplex>0</duplex>"+
+                    "\n\t\t\t<duplex>"+duplex+"</duplex>"+
                     "\n\t\t\t<output-folder>1. data to run/xerox</output-folder>" +
                     "\n\t\t</process>";
             break
@@ -146,6 +151,7 @@ function checkSequence(child, position){
             code = "\n\t\t<process spoils=\"true\">\n" +
                     "\t\t\t<position>"+position+"</position>\n" +
                     "\t\t\t<script>postscript-xerox-opt.pl</script>\n" +
+                    "\t\t\t<duplex>"+duplex+"</duplex>\n"+
                     "\t\t\t<dir>"+name+"</dir>\n" +
                     "\t\t\t<xsl>"+name+".xsl</xsl>\n" +
                     "\t\t\t<output-folder>1. data to run/xerox</output-folder>\n" +
@@ -289,7 +295,7 @@ function checkSequence(child, position){
             code = "\n\t\t<process spoils=\"true\">\n" +
                     "\t\t\t<position>"+position+"</position>\n" +
                     "\t\t\t<script>pdf-2.5.pl</script>\n" +
-                    "\t\t\t<duplex>1</duplex>\n" +
+                    "\t\t\t<duplex>"+duplex+"</duplex>\n" +
                     "\t\t\t<dir>"+name+"</dir>\n" +
                     "\t\t\t<xsl>Letters.xsl</xsl>\n" +
                     "\t\t\t<output-folder>1. data to run/pdf</output-folder>\n" +
