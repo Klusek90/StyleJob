@@ -1,20 +1,16 @@
 
 $("#create").click(function (){
 
+    // select option for 1st postion job script
     let select= $("#1stScript option:selected").val()
     let code="\n\t\t<process>\n" +
-        "\t\t\t<position>"+1+"</position>\n" +
+        "\t\t\t<position>1</position>\n" +
         "\t\t\t<script>"+select+"</script>\n" +
         "\t\t</process>";
 
-    console.log($("1stScript").val())
 
 
-
-    let job =$(".jobStructure").children(":first").html()
-
-    console.log(job)
-
+    // logic to correct mailsort position
     for (let i =2;i < 15; i++){
         if (code.includes("mailsort"))
         {
@@ -22,19 +18,17 @@ $("#create").click(function (){
         }
         else
         {
-
             code += checkSequence(i,i)
         }
     }
 
+    //wrapning job with additional information
     let wrap =document.getElementById("wraper");
     if (wrap.checked == true)
     {
-    code = jobDesign(code)
+        code = jobDesign(code)
     }
     $('textarea.text').val(code)
-
-
 
 })
 
@@ -292,22 +286,28 @@ function checkSequence(child, position){
                     "\t\t\t</process>"
             ;break
         case "PDF 2.5":
-            code = "\n\t\t<process>\n" +
+            code = "\n\t\t<process spoils=\"true\">\n" +
                     "\t\t\t<position>"+position+"</position>\n" +
                     "\t\t\t<script>pdf-2.5.pl</script>\n" +
                     "\t\t\t<duplex>1</duplex>\n" +
-                    "\t\t\t<dir>BTS PTX Animal Friends</dir>\n" +
-                    "\t\t\t<xsl>cheques.xsl</xsl>\n" +
+                    "\t\t\t<dir>"+name+"</dir>\n" +
+                    "\t\t\t<xsl>Letters.xsl</xsl>\n" +
                     "\t\t\t<output-folder>1. data to run/pdf</output-folder>\n" +
                     "\t\t</process>"
             ; break
 
-        // case "XL2XL":
-        //     code = "\n\t\t<process>\n" +
-        //         "\t\t\t<position>"+position+"</position>\n" +
-        //         "\t\t\t<script>xl2xml.pl</script>\n" +
-        //         "\t\t</process>"
-        //     ; break
+        case "New field":
+            code = "\n\t\t<process>\n" +
+                "\t\t\t<position>"+position+"</position>\n" +
+                "\t\t\t<script>new-field.pl</script>\n" +
+                "\t\t\t<fields>\n" +
+                "\t\t\t\t<field>\n" +
+                "\t\t\t\t\t<name>address1</name>\n" +
+                "\t\t\t\t\t<xpath>concat(title,' ',first_name,' ',surname)</xpath>\n" +
+                "\t\t\t\t</field>\n" +
+                "\t\t\t</fields>"+
+                "\t\t</process>"
+            ; break
         default: code=""; break
     }
     return code

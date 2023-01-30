@@ -14,49 +14,51 @@
                 <div><input type="text" id="regx1"><br/></div>
                 <label>numbers behind</label>
                 <div><input type="text" id="regx2"><button class="add radious">+</button><button class="del radious"> - </button><br/> </div>
+                </br>
+                <h6>Jobs Script: </h6>
+                <select name="1stScript" id="1stScript">
+                    <option value="Reset">Reset</option>
+                    <option value="xl2xml.pl">xl2xml.pl</option>
+                    <option value="csv-header.pl">csv-header.pl</option>
+                    <option value="csv.pl">csv.pl</option>
+                    <option value="csv-pipe.pl">csv-pipe.pl</option>
+                    <option value="line-data-header-ff.pl">line-data-header-ff.pl</option>
+                    <option value="txt-gt.pl">txt-gt.pl</option>
+                </select>
+            </br>
                <div id="field3" class="dis">
 
                    <input type="text" id="regx3"><br/></div>
                <div id="field4" class="dis">
                    <input type="text" id="regx4"> </div>
             <button type="button" id="create" class="btn btn-success">Create</button>
+            <input type="checkbox" id="wraper">
+            <label for="wraper">Wrapper</label>
         </div>
 
 
 
         <div class="col col-sm-8">
-            <input type="checkbox" id="wraper">
-            <label for="wraper">Wrapper</label>
+
             <div class="boxcont jobStructure">
                 <p class="draggable red" draggable="true">Job</p>
-
-
-
             </div>
         </div>
 
     </div>
     <div class="row">
         <div class="col col-sm-6 boxcont process">
-            <p class="draggable yell2" draggable="true">Foppy</p><p class="draggable yell1" draggable="true">PDF 2.5</p><p class="draggable yell3" draggable="true">PostScript</p>
-
-            <p class="draggable yell1" draggable="true" style="font-size: 8pt">Mailcheck <br>(MCK)</p><p class="draggable yell2" draggable="true">Report</p><p class="draggable yell1" draggable="true">LookUp</p>
-
-            <p class="draggable yell3" draggable="true">?</p><p class="draggable yell1" draggable="true">Split</p><p class="draggable yell3" draggable="true">MailSort</p>
-
-            <p class="draggable yell3" draggable="true">Autopilot</p><p class="draggable green" draggable="true">Chain</p>
-        </div>
-        <div class="col col-sm-6 boxcont jobs">
-            <h6>Jobs Script: </h6>
-            <select name="1stScript" id="1stScript">
-                <option value="Reset">Reset</option>
-                <option value="xl2xml.pl">xl2xml.pl</option>
-                <option value="csv-header.pl">csv-header.pl</option>
-                <option value="csv.pl">csv.pl</option>
-                <option value="csv-pipe.pl">csv-pipe.pl</option>
-                <option value="line-data-header-ff.pl">line-data-header-ff.pl</option>
-                <option value="txt-gt.pl">txt-gt.pl</option>
-            </select>
+            <p class="draggable yell2" draggable="true">Foppy</p>
+            <p class="draggable yell1" draggable="true">PDF 2.5</p>
+            <p class="draggable yell3" draggable="true">PostScript</p>
+            <p class="draggable yell1" draggable="true" style="font-size: 11pt;">Mailcheck (MCK)</p>
+            <p class="draggable yell2" draggable="true">Report</p>
+            <p class="draggable yell1" draggable="true">LookUp</p>
+            <p class="draggable yell3" draggable="true">New field</p>
+            <p class="draggable yell1" draggable="true">Split</p>
+            <p class="draggable yell3" draggable="true">MailSort</p>
+            <p class="draggable yell3" draggable="true">Autopilot</p>
+            <p class="draggable green" draggable="true">Chain</p>
         </div>
     </div>
 
@@ -71,7 +73,7 @@
 
 </div>
 <div th:replace="fragments/script :: script"></div>
-<script th:src="@{/createJobStructure.js}"></script>
-<script th:src="@{/job script/jobprocesses.js}"></script>
+<script th:src="@{/job}"></script>
+<script th:src="@{/job/jobprocesses.js}"></script>
 </body>
 </html>
