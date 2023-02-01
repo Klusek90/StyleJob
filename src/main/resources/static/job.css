@@ -88,3 +88,9 @@ input#wraper{
     margin-right: 1cm;
     font-size: 17pt;
 }
+.splitOption >input{
+    width: 2cm;
+}
+.splitOption{
+    display: none;
+}

@@ -38,7 +38,6 @@ function checkSequence(child, position){
     }else { extension='pdf' }
 
 
-
     let name= $("#filename").val();
     let compare = $(".jobStructure p:nth-child("+child+")").html()
     let code
@@ -283,13 +282,8 @@ function checkSequence(child, position){
             ;break
 
         case "Split":
-            code = "\n\t\t<process>\n" +
-                    "\t\t\t<position>"+position+"</position>\n" +
-                    "\t\t\t<script>split-quantity.pl</script>\n" +
-                    "\t\t\t<quantity>5000</quantity>\n" +
-                    "\t\t\t<oldpart>[append]</oldpart>\n" +
-                    "\t\t\t<newpart>_[index]</newpart>\n" +
-                    "\t\t\t</process>"
+            $(".splitOption").css("display","block")
+            code = SplitFunction(position);
             ;break
         case "PDF 2.5":
             code = "\n\t\t<process spoils=\"true\">\n" +

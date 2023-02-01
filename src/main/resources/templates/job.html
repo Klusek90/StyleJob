@@ -31,6 +31,17 @@
             </select>
             </br>
 
+            <div class="splitOption">
+                <label for="split">Split</label>
+                <select id="split">
+                    <option value="field">Field</option>
+                    <option value="quantity">Quantity</option>
+                </select>
+                <span>Quantity:</span>
+                <input type="text" id="splitNumber">
+<!--                <span>Index:</span>-->
+<!--                <input type="text" id="splitIndex">-->
+            </div>
             <div>
                 <label for="extenstion">Extension</label>
                 <select id="extenstion">
@@ -38,12 +49,12 @@
                     <option value="Ps">Ps</option>
                 </select>
 
-                <label for="duplex">Wrapper</label>
+                <label for="duplex">Is it duplex?</label>
                 <select id="duplex">
                     <option value="No">No</option>
                     <option value="Yes">Yes</option>
                 </select>
-
+                </br>
                 <button type="button" id="create" class="btn btn-success">Create</button>
 
             </div>
@@ -81,6 +92,7 @@
     </div>
   </div>
 <div th:replace="fragments/script :: script"></div>
+<div th:replace="fragments/processes :: processes"></div>
 <script th:src="@{/job/dragbox.js}"></script>
 <script th:src="@{/job/createJobStructure.js}"></script>
 </body>
