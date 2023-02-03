@@ -98,3 +98,11 @@ input#wraper{
 .mailsortOption{
     display: none;
 }
+
+#downloadXML{
+    width: 2.5cm;
+    display: block;
+    float: right;
+    margin-right: -4.7cm;
+    margin-top: 20px;
+}

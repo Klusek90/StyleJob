@@ -95,14 +95,16 @@
         <div class="main col">
             <button id="copybtn" class="btn btn-primary">
                 <i class="fa fa-clone">Copy</i>
-            </button><br>
-            <textarea class="text" style="width: 80%"> </textarea>
+            </button>
+            <button id="downloadXML" class="btn btn-success">Download</button><br>
+            <textarea id="content" class="text" style="width: 90%"> </textarea>
         </div>
     </div>
   </div>
 <div th:replace="fragments/script :: script"></div>
 <div th:replace="fragments/processes :: processes"></div>
 <script th:src="@{/job/dragbox.js}"></script>
+<script th:src="@{/job/download.js}"></script>
 <script th:src="@{/job/createJobStructure.js}"></script>
 </body>
 </html>

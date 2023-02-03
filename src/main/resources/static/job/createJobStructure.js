@@ -200,7 +200,7 @@ function checkSequence(child, position){
                 "\t\t\t<script>new-field.pl</script>\n" +
                 "\t\t\t<fields>\n" +
                 "\t\t\t\t<field>\n" +
-                "\t\t\t\t\t<name>address1</name>\n" +
+                "\t\t\t\t\t<name>(field_name)</name>\n" +
                 "\t\t\t\t\t<xpath>concat(title,' ',first_name,' ',surname)</xpath>\n" +
                 "\t\t\t\t</field>\n" +
                 "\t\t\t</fields>"+
