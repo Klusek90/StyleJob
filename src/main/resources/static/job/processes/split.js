@@ -27,6 +27,7 @@ function SplitFunction(position){
              "\t\t\t<script>split.pl</script>\n" +
              "\t\t\t<files>\n" +
              "\t\t\t\t<file>\n" +
+            "\t\t<!-- logic for split-->\n"+
              "\t\t\t\t\t<xpath>(logic)</xpath>\n" +
              "\t\t\t\t\t<filename>\n" +
              "\t\t\t\t\t\t<oldpart>[append]</oldpart>\n" +
@@ -34,6 +35,7 @@ function SplitFunction(position){
              "\t\t\t\t\t</filename>\n" +
              "\t\t\t\t</file>\n" +
              "\t\t\t\t<file>\n" +
+             "\t\t<!-- logic for split-->\n"+
              "\t\t\t\t\t<xpath>(logic2)</xpath>\n" +
              "\t\t\t\t\t<filename>\n" +
              "\t\t\t\t\t\t<oldpart>[append]</oldpart>\n" +

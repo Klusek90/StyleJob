@@ -152,7 +152,7 @@ function checkSequence(child, position){
                     "\t\t\t<script>postscript-xerox-opt.pl</script>\n" +
                     "\t\t\t<duplex>"+duplex+"</duplex>\n"+
                     "\t\t\t<dir>"+name+"</dir>\n" +
-                    "\t\t\t<xsl>"+name+".xsl</xsl>\n" +
+                    "\t\t\t<xsl>Letter.xsl</xsl>\n" +
                     "\t\t\t<output-folder>1. data to run/xerox</output-folder>\n" +
                     "\t\t</process>"
 
@@ -162,6 +162,7 @@ function checkSequence(child, position){
             code = "\n\t\t<process>\n" +
                     "\t\t\t<position>"+position+"</position>\n" +
                     "\t\t\t<script>lookup-palmer.pl</script>\n" +
+                "\t\t<!-- lookup file-->\n"+
                     "\t\t\t<lookup>[look up file name]</lookup>\n" +
                     "\t\t\t<lookup-entry>/data/items/item</lookup-entry>\n" +
                     "\t\t\t<lookup-field>[accountID]</lookup-field>\n" +
@@ -200,11 +201,27 @@ function checkSequence(child, position){
                 "\t\t\t<script>new-field.pl</script>\n" +
                 "\t\t\t<fields>\n" +
                 "\t\t\t\t<field>\n" +
+                "\t\t<!-- new field name-->\n"+
                 "\t\t\t\t\t<name>(field_name)</name>\n" +
+                "\t\t<!-- new filed content-->\n"+
                 "\t\t\t\t\t<xpath>concat(title,' ',first_name,' ',surname)</xpath>\n" +
                 "\t\t\t\t</field>\n" +
                 "\t\t\t</fields>"+
                 "\t\t</process>"
+            ; break
+
+        case "Individuals":
+            code = "\n\t\t<process>\n" +
+                    "\t\t\t<position>"+position+"</position>\n" +
+                    "\t\t\t<script>IndividualPDFs</script>\n" +
+                    "\t\t\t<format>simple-pdf</format>\n" +
+                    "\t\t\t<duplex>"+duplex+"</duplex>\n" +
+                    "\t\t\t<dir>Engage Rochford Council Tax Notifications</dir>\n" +
+                    "\t\t\t<xsl>letter.xsl</xsl>\n" +
+                    "\t\t\t<output-folder>\\\\ns004\\R_Drive\\1. data to run\\engage\\Rochford\\Ctax_Notifications</output-folder>\n" +
+                    "\t\t\t<output-filename>pdf-filename</output-filename>\n" +
+                    "\t\t\t<zip>false</zip>\n" +
+                    "\t\t</process>"
             ; break
         default: code=""; break
     }
