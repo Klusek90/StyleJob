@@ -38,5 +38,5 @@ deploy:
     - envsubst < kubernetes-deploy-template.yaml > kubernetes-deploy.yaml
     - kubectl apply -f kubernetes-deploy.yaml
   only:
-    - main
+    - master
   environment: kubernetes
