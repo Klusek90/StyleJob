@@ -1,0 +1,71 @@
+kind: Service
+apiVersion: v1
+metadata:
+  namespace: $KUBE_NAMESPACE
+  name: $CI_PROJECT_NAME-service
+spec:
+  selector:
+    app: $CI_PROJECT_NAME
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: $KUBE_NAMESPACE
+  name: $CI_ENVIRONMENT_SLUG-$CI_PROJECT_NAME-deployment
+  annotations:
+    app.gitlab.com/app: $CI_PROJECT_PATH_SLUG
+    app.gitlab.com/env: $CI_ENVIRONMENT_SLUG
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: $CI_PROJECT_NAME
+  template:
+    metadata:
+      labels:
+        app: $CI_PROJECT_NAME
+      annotations:
+        app.gitlab.com/app: $CI_PROJECT_PATH_SLUG
+        app.gitlab.com/env: $CI_ENVIRONMENT_SLUG
+    spec:
+      containers:
+      - name: $CI_PROJECT_NAME-container
+        image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: gitlab-secret
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: $KUBE_NAMESPACE
+  name: $CI_PROJECT_NAME-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: $CI_PROJECT_NAME.cloud.datagraphic.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: $CI_PROJECT_NAME-service
+            port: 
+              number: 80
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: gitlab-secret
+  namespace: $KUBE_NAMESPACE
+data:
+  .dockerconfigjson: >-
+    eyJhdXRocyI6eyJnY3IubXlhY2VuaS5jby51ayI6eyJ1c2VybmFtZSI6Imt1YmVybmV0ZXMiLCJwYXNzd29yZCI6Imt1YmVybmV0ZXMiLCJhdXRoIjoiYTNWaVpYSnVaWFJsY3pwcmRXSmxjbTVsZEdWeiJ9fX0=
+type: kubernetes.io/dockerconfigjson

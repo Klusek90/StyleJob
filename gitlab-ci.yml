@@ -1,0 +1,42 @@
+stages:
+  - build
+  - docker
+  - deploy
+
+build:
+  stage: build
+  image: openjdk:8-jdk-alpine
+  variables:
+    GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+  before_script:
+    - chmod a+x ./gradlew
+    - export GRADLE_USER_HOME=`pwd`/.gradle
+  script:
+    - ./gradlew build
+  artifacts:
+    paths:
+      - build/
+
+docker:
+  stage: docker
+  image: docker:latest
+  services:
+    - lordgaav/dind-options:latest
+  variables:
+    DOCKER_HOST: tcp://localhost:2375
+    https_proxy: http://192.168.10.244:8080
+  before_script:
+    - docker login -u kubernetes -p kubernetes gcr.myaceni.co.uk
+  script:
+    - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA" .
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA"
+
+deploy:
+  stage: deploy
+  image: lwolf/kubectl_deployer:latest
+  script:
+    - envsubst < kubernetes-deploy-template.yaml > kubernetes-deploy.yaml
+    - kubectl apply -f kubernetes-deploy.yaml
+  only:
+    - main
+  environment: kubernetes

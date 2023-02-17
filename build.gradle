@@ -27,6 +27,11 @@ dependencies {
     implementation('org.webjars:jquery:2.1.3')
 }
 
+
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+bootJar {
+    archiveFileName.set("${project.name}.jar")
 }
