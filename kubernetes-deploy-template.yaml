@@ -9,7 +9,7 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 8081
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -36,7 +36,7 @@ spec:
       - name: $CI_PROJECT_NAME-container
         image: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
         ports:
-        - containerPort: 8080
+        - containerPort: 8081
       imagePullSecrets:
       - name: gitlab-secret
 ---
