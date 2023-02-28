@@ -9,7 +9,7 @@
 <a class="back" href="home">Back</a>
     <div class="container">
         <div class="row">
-              <div class="col col-sm-6 ">
+              <div class="col col-sm-3 ">
                 <form>
                     <span>number of columns:</span><br>
                     <input type="text" id="col"><br>
@@ -19,8 +19,11 @@
                     <button type="button" id="update" class="btn btn-success">Update</button>
                 </form>
              </div>
-            <div class="col col-sm-1 col-md-1"></div>
-             <div class="col col-sm-5" >
+            <div class="col col-sm-4 ">
+                <div class="table-draw">some text</div>
+
+            </div>
+             <div class="col col-sm-4" >
                     <h6>Column widht in %</h6>
                     <div class="colsize"></div>
              </div>
@@ -58,5 +61,6 @@
     </div>
     <div th:replace="fragments/script :: script"></div>
     <script th:src="@{/table/table.js}"></script>
+    <script th:src="@{/table/draw.js}"></script>
 </body>
 </html>

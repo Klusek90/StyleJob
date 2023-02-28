@@ -29,18 +29,15 @@ function create(columnsNum, rowNum,list) {
 
 
 
- ///--------table body creation--------
+ ///--------table code creation--------
     let columns ="";
      for(let c=1;c<=columnsNum;c++){
         columns = columns+ '\n\t\t<fo:table-column column-width=\"'+list[c]+'%\"/>';
         }
 
     let rows= "";
-
     for(let i=1;i<=rowNum;i++){
-
        let rowBlock ="";
-
         for(let j=1;j<=(columnsNum);j++){
             if (j==columnsNum) {
                 rowBlock += '\n\t\t\t\t<fo:table-cell>' +
@@ -70,6 +67,8 @@ function create(columnsNum, rowNum,list) {
         '\n\t\t</fo:table-body>' +
         '\n\t</fo:table>' +
         '\n</fo:block-container>';
+
+        drawTable();
 
 return tab;
 }
