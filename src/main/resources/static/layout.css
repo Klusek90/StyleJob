@@ -140,7 +140,8 @@ input:checked + .slider:before {
 }
 
 .cell{
- float: left;
+    float: left;
+    font-size: 60%;
 
  }
 

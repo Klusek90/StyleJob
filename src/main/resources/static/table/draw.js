@@ -6,6 +6,7 @@ function drawTable() {
     let cell = ''
     let cellHeight = 100 / rowNum
     let cellWidth = 100 / colNum
+    let fontsize= 20
 
     let s = document.getElementById("solid");
     let h =document.getElementById("sheaders");
@@ -13,18 +14,35 @@ function drawTable() {
 
     let solid
 
+
     if (s.checked == true) {
-        solid = ' border-style: solid'
+        solid = ' border-style: solid; padding-left: 4px;'
     } else {
         solid = ''
     }
 
-
+    fontsize = fontsize -rowNum;
 
     for (let i=1; i<=(rowNum); i++){
         for (let j=1; j<=(colNum);j++){
 
-            cell += '<div class="cell" style="width:'+cellWidth +'%;height: 100%;'+solid+'">Text'+i+'.'+j+'</div>'
+            let boldheader
+            if (h.checked == true && i==1){
+                boldheader = ' font-weight: bold;'
+            }else {
+                boldheader =''
+            }
+
+
+            let lastrow
+            if (r.checked == true && j== colNum){
+                lastrow = ' text-align: right;'
+            }else {
+                lastrow =''
+            }
+
+
+            cell += '<div class="cell" style="font-size:'+fontsize+'px; width:'+cellWidth +'%;height: 100%;'+ solid+ boldheader+ lastrow+'">Text'+i+'.'+j+'</div>'
         }
 
     draw+='<div class="inside-draw" style="height:'+ cellHeight+'%">'+cell+'</div>'

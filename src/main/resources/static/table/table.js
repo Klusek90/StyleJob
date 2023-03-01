@@ -8,7 +8,7 @@ function create(columnsNum, rowNum,list) {
     let r = document.getElementById("align-right");
 
     if (s.checked==true) {
-        s = " border=\"solid\""
+        s = " border=\"solid\"; padding-left: 4px"
     } else {
         s = ""
     }
@@ -40,13 +40,13 @@ function create(columnsNum, rowNum,list) {
        let rowBlock ="";
         for(let j=1;j<=(columnsNum);j++){
             if (j==columnsNum) {
-                rowBlock += '\n\t\t\t\t<fo:table-cell>' +
+                rowBlock += '\n\t\t\t\t<fo:table-cell'+s+'>' +
                     '\n\t\t\t\t\t<fo:block' + h +  r +'>' +
                     '\n\t\t\t\t\t\t Text' + i + "." + j +
                     '\n\t\t\t\t\t</fo:block>' +
                     '\n\t\t\t\t</fo:table-cell>';
             }else{
-                rowBlock += '\n\t\t\t\t<fo:table-cell>' +
+                rowBlock += '\n\t\t\t\t<fo:table-cell'+s+'>' +
                     '\n\t\t\t\t\t<fo:block' + h +'>' +
                     '\n\t\t\t\t\t\t Text' + i + "." + j +
                     '\n\t\t\t\t\t</fo:block>' +
@@ -59,7 +59,7 @@ function create(columnsNum, rowNum,list) {
         h = "";
     }
 
-    let tab = '<fo:block-container font-size=\"8.5pt\"'+s+'>' +
+    let tab = '<fo:block-container>' +
         '\n\t<fo:table>' +
         columns +
         '\n\t\t<fo:table-body>' +
@@ -74,10 +74,10 @@ return tab;
 }
 
 
-function addFields(columnsNum){
+function addFields(columnsNum,width){
     $(".colsize").html("");
     for(let x =1;x<=columnsNum;x++ ){
-    $('.colsize').append('<span>Col'+x+' </span><input type="text" id="colsize'+x+'"><br>');}
+    $('.colsize').append('<span>Col'+x+' </span><input type="text" id="colsize'+x+'" value="'+width+'"><br>');}
 }
 
 
@@ -85,13 +85,16 @@ function addFields(columnsNum){
 $("#create").click(function (){
     let x =$('#col').val();
     let y = $('#row').val()
+    let width = Math.round((100 / x))
+
 
     colList = [];
     for (let i =1; i<=x;i++){
-        colList[i]= 20;
+        colList[i]= width;
+
     };
 
-    addFields(x);
+    addFields(x,width);
     let details = create(x,y,colList);
 $('textarea.text').val(details);
 
