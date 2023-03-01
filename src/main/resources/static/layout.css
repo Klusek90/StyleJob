@@ -132,5 +132,18 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+.table-draw{
+    background-color: floralwhite;
+    height: 5cm;
+    border-style: double;
+    padding: 15px
+}
+
+.cell{
+    float: left;
+    font-size: 60%;
+
+ }
+
 /*-----------------*/
 
