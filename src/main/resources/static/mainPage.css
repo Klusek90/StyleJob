@@ -1,0 +1,19 @@
+body {
+    background-image: url(/image/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 49%;
+}
+.task{
+    position: relative;
+    top: 7cm;
+    left: 33%;
+}
+
+
+.block{
+    text-decoration: none;
+    color: black;
+    font-size: 36pt;
+    padding: 14px;
+    font-family: 'Shantell Sans', cursive;
+}
