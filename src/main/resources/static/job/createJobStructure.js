@@ -231,21 +231,36 @@ function checkSequence(child, position){
 
 function jobDesign(body){
 
+    let regExp =/[a-zA-z]/;
     let name= $("#filename").val();
     let reg1= $("#regx1").val();
-    let reg2= $("#regx2").val().length;
-    reg2='\\d{'+reg2+'}';
+    let reg2= $("#regx2").val();
+    let reg3= $("#regx3").val();
+    let reg4= $("#regx4").val();
+    let x2='d' ,x3='d',x4='d';
 
-    let reg3= $("#regx3").val().length;
-    let reg4= $("#regx4").val().length;
 
-    if (reg3>0){
-        reg3="_\\d{"+reg3+"}";
-    }else{
-        reg3="";
+
+
+
+    if (reg2.length>0){
+        if (regExp.test(reg2)) { x2='w'};
+        reg2="_\\"+x2+"{"+reg2.length+"}";
+    } else {
+        reg2 = "";
     }
-    if (reg4>0){
-        reg4="_\\d{"+reg4+"}";
+
+    if (reg3.length>0){
+        if (regExp.test(reg3)) { x3='w'};
+        reg3="_\\"+x3+"{"+reg3.length+"}";
+    } else {
+        reg3 = "";
+    }
+
+
+    if (reg4.length>0){
+        if (regExp.test(reg4)) { x4='w'};
+        reg4="_\\"+x4+"{"+reg4.length+"}";
     }else{
         reg4="";
     }
@@ -264,7 +279,6 @@ $(".add").click(function () {
     if(press===4){press=4}
     else{press++}
 
-    console.log(press);
     $("#field"+press).css("display","block");
 });
 $(".del").click(function () {
@@ -273,6 +287,5 @@ $(".del").click(function () {
     if (press===2){press=2}
     else{press--}
 
-    console.log(press);
 
 });
