@@ -2,15 +2,6 @@ body{
     background-color: #dedede;
     color:black;
 }
-/*.job{*/
-/*    background-image: url("/image/note.png");*/
-/*    height: 6cm;*/
-/*    width: 6cm;*/
-/*}*/
-/*.job:hover{*/
-/*    background-image: none;*/
-/*}*/
-
 .job_btn{
     position: absolute;
     left: -3cm;
