@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
-<head th:replace="fragments/header :: header">
+<head>
     <meta charset="UTF-8">
-    <title>Table creator</title>
+    <title>Stylo Table</title>
+    <link th:href="tablePage.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"/>
 
 </head>
+
 <body>
-<a class="back" href="home">Back</a>
+<a href="home"><button class="back" >Back</button></a>
     <div class="container">
         <div class="row">
-              <div class="col col-sm-3 ">
-                <form>
-                    <span>number of columns:</span><br>
-                    <input type="text" id="col"><br>
-                    <span>number of rows:</span><br>
-                    <input type="text" id="row"><br/>
+            <div class="col pt-5 bar">
+                    <span>number of columns:</span>
+                    <input type="text" id="col">
+                    <span>number of rows:</span>
+                    <input type="text" id="row">
                     <button type="button" id="create" class="btn btn-primary">Create</button>
                     <button type="button" id="update" class="btn btn-success">Update</button>
-                </form>
-             </div>
-            <div class="col col-sm-4 ">
-                <div class="table-draw">Draw table box</div>
+            </div>
+        </div>
+        <div class="row"></div>
+        <div class="tbox col col-sm-1">
+            <div class="what">
+                <span for="sheaders">Bold header</span>
+                <label class="switch">
+                    <input type="checkbox" id="sheaders">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="what">
+                <span for="solid">Borders net</span>
+                <label class="switch">
+                    <input type="checkbox" id="solid">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="what">
+
+                <span class="what" for="align-right">Last right</span>
+                <label class="switch">
+                    <input type="checkbox" id="align-right">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+            <div class="col col-sm-9 ">
+                <div class="table-draw"></div>
 
             </div>
-             <div class="col col-sm-4" >
+             <div class="col col-sm-2" id="column-block" >
                     <h6>Column widht in %</h6>
                     <div class="colsize"></div>
              </div>
         </div>
-         <div class="row pt-3">
-             <div class="tbox col">
-                 <label class="switch">
-                     <input type="checkbox" id="sheaders">
-                     <span class="slider round"></span>
-                 </label>
-                    <span for="sheaders">Bold header</span>
-                 <label class="switch">
-                     <input type="checkbox" id="solid">
-                     <span class="slider round"></span>
-                 </label>
-                    <span for="solid">Borders net</span>
-
-                 <label class="switch">
-                     <input type="checkbox" id="align-right">
-                     <span class="slider round"></span>
-                 </label>
-                    <span for="align-right">Last row to the right</span>
-             </div>
-        </div>
-
 
             <div class="row">
-                <button id="copybtn" class="btn btn-primary">
-                <i class="fa fa-clone">Copy</i>
-                </button><br>
-                    <textarea class="text"> </textarea>
+                <div class="col col-12 code">
+                    <button id="copybtn" class="btn btn-primary">Copy</button><br>
+                        <textarea class="text"> </textarea>
+                </div>
             </div>
 
 

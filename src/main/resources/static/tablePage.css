@@ -1,0 +1,153 @@
+*{
+    color: wheat;
+}
+body{
+    background-image: url(image/wood2.jpg);
+}
+.cell{
+    float: left;
+    font-size: 60%;
+    border-image: url(image/board.png) 8% repeat;
+    margin: -1px;
+    padding: 10px;
+    color: black;
+}
+
+.table-draw{
+    /*centrowanie na srodku kartki*/
+    ackground-color: floralwhite;
+    border-style: double;
+    padding: 26px;
+    width: 59%;
+    height: 62%;
+    top: 45%;
+    left: 44%;
+    position: absolute;
+    transform: translate(-50%,-49%);
+    background-color: cornsilk;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#column-block{
+    width: 11%;
+    height: 62%;
+    top: 14%;
+    right: 10%;
+    position: absolute;
+}
+input{
+    width: 1.5cm;
+}
+
+.back{
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    width: 2cm;
+    height: 1cm;
+    font-weight: bold;
+    color: #F1F1F1;
+    background-color: orange;
+    border-radius: 8px;
+    border-color: wheat;
+}
+.back:hover{
+    background-color: orangered;
+}
+.bar{
+    margin-left: 3cm;
+}
+.tbox{
+    position: absolute;
+    top: 16%;
+    left: 4%;
+}
+
+.code{
+    position: absolute;
+    top: 78%;
+    left: 6%;
+}
+
+textarea{
+    width: 70%;
+    height: 7cm;
+}
+
+/*------- Switcher/toggle -------*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.what{
+    width: 3cm;
+    margin-top: 5px;
+}
+textarea, input{
+    background-color: transparent;
+}
+#copybtn{
+    color: #F1F1F1;
+}
