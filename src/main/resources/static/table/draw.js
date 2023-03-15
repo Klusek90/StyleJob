@@ -5,7 +5,7 @@ function drawTable() {
     let draw = ''
     let cell = ''
     let cellHeight = 100 / rowNum
-    let cellWidth = 100 / colNum
+    let cellWidth = []
     let fontsize= 20
 
     let s = document.getElementById("solid");
@@ -13,6 +13,9 @@ function drawTable() {
     let r = document.getElementById("align-right");
 
     let solid
+
+    //cell width
+
 
 
     if (s.checked == true) {
@@ -40,9 +43,9 @@ function drawTable() {
             }else {
                 lastrow =''
             }
+            cellWidth[j]=$('#colsize'+j).val()
 
-
-            cell += '<div class="cell" style="font-size:'+fontsize+'px; width:'+cellWidth +'%;height: 100%;'+ solid+ boldheader+ lastrow+'">Text'+i+'.'+j+'</div>'
+            cell += '<div class="cell" style="font-size:'+fontsize+'px; width:'+cellWidth[j] +'%;height: 100%;'+ solid+ boldheader+ lastrow+'">Text'+i+'.'+j+'</div>'
         }
 
     draw+='<div class="inside-draw" style="height:'+ cellHeight+'%">'+cell+'</div>'
