@@ -161,12 +161,12 @@ function checkSequence(child, position){
         case "LookUp":
             code = "\n\t\t<process>\n" +
                     "\t\t\t<position>"+position+"</position>\n" +
-                    "\t\t\t<script>lookup-palmer.pl</script>\n" +
+                    "\t\t\t<script>lookup.pl</script>\n" +
                 "\t\t<!-- lookup file-->\n"+
-                    "\t\t\t<lookup>[look up file name]</lookup>\n" +
+                    "\t\t\t<lookup>[look up file path]</lookup>\n" +
                     "\t\t\t<lookup-entry>/data/items/item</lookup-entry>\n" +
-                    "\t\t\t<lookup-field>[accountID]</lookup-field>\n" +
-                    "\t\t\t<match-field>[accountnumber]</match-field>\n" +
+                    "\t\t\t<lookup-field>[field in lookup]</lookup-field>\n" +
+                    "\t\t\t<match-field>[field in data]</match-field>\n" +
                     "\t\t\t<fields>\n" +
                     "\t\t\t\t<field>\n" +
                     "\t\t\t\t\t<position>1</position>\n" +
@@ -223,6 +223,84 @@ function checkSequence(child, position){
                     "\t\t\t<zip>false</zip>\n" +
                     "\t\t</process>"
             ; break
+        case "Suppress":
+            code = "\n\t\t<process>\n" +
+                    "\t\t\t<position>"+position+"</position>\n" +
+                    "\t\t\t<script>suppress.pl</script>\n" +
+                    "\t\t\t<suppressions>\n" +
+                    "\t\t\t\t<suppression>\n" +
+                    "\t\t\t\t\t<description>[suppress field name]</description>\n" +
+                    "\t\t\t\t\t<xpath>[field]=[/logic]</xpath>\n" +
+                    "\t\t\t\t</suppression>\n" +
+                    "\t\t\t</suppressions>\n" +
+                    "\t\t</process>"
+            ; break
+        case "Simple Reducer":
+            code = "<process spoils=\"true\">\n" +
+                    "\t\t\t<position>"+position+"</position>\n" +
+                    "\t\t\t<script>simple-reducer.pl</script>\n" +
+                    "\t\t\t<output-folder>1. data to run/xerox</output-folder>\n" +
+                    "\t\t\t<colour>false</colour>\n" +
+                    "\t\t\t<duplex>"+duplex+"</duplex>\n" +
+                    "\t\t\t<version>2</version>\n" +
+                    "\t\t\t<separators>\n" +
+                    "\t\t\t\t<separator>\n" +
+                    "\t\t\t\t\t<pages>0</pages>\n" +
+                    "\t\t\t\t\t<message>[separator]</message>\n" +
+                    "\t\t\t\t</separator>\n" +
+                    "\t\t\t</separators>\n" +
+                    "\t\t\t<elements>\n" +
+                    "\t\t\t\t<element>\n" +
+                    "\t\t\t\t\t<id>Address Remover</id>\n" +
+                    "\t\t\t\t\t<x>80</x>\n" +
+                    "\t\t\t\t\t<y>617</y>\n" +
+                    "\t\t\t\t\t<width>200</width>\n" +
+                    "\t\t\t\t\t<height>100</height>\n" +
+                    "\t\t\t\t</element>\n" +
+                    "\t\t\t\t<element>\n" +
+                    "\t\t\t\t\t<id>Address Rewriter</id>\n" +
+                    "\t\t\t\t\t<x>63</x>\n" +
+                    "\t\t\t\t\t<y>735</y>\n" +
+                    "\t\t\t\t\t<width>180</width>\n" +
+                    "\t\t\t\t\t<height>110</height>\n" +
+                    "\t\t\t\t\t<bottom-up>true</bottom-up>\n" +
+                    "\t\t\t\t</element>\n" +
+                    "\t\t\t\t<element>\n" +
+                    "\t\t\t\t\t<id>CBC</id>\n" +
+                    "\t\t\t\t\t<x>63</x>\n" +
+                    "\t\t\t\t\t<y>605</y>\n" +
+                    "\t\t\t\t</element>\n" +
+                    "\t\t\t\t<element>\n" +
+                    "\t\t\t\t\t<id>OMR Top</id>\n" +
+                    "\t\t\t\t\t<x>115</x>\n" +
+                    "\t\t\t\t\t<y>820</y>\n" +
+                    "\t\t\t\t</element>\n" +
+                    "\t\t\t\t<element>\n" +
+                    "\t\t\t\t\t<id>Control</id>\n" +
+                    "\t\t\t\t\t<x>51</x>\n" +
+                    "\t\t\t\t\t<y>590</y>\n" +
+                    "\t\t\t\t\t<rotate>90</rotate>\n" +
+                    "\t\t\t\t</element>\n" +
+                    "\t\t\t\t<element>\n" +
+                    "\t\t\t\t\t<id>Datamatrix</id>\n" +
+                    "\t\t\t\t\t<x>245</x>\n" +
+                    "\t\t\t\t\t<y>600</y>\n" +
+                    "\t\t\t\t</element>\n" +
+                    "\t\t\t\t<element>\n" +
+                    "\t\t\t\t\t<id>Mailsort</id>\n" +
+                    "\t\t\t\t\t<x>247</x>\n" +
+                    "\t\t\t\t\t<y>652</y>\n" +
+                    "\t\t\t\t</element>\n" +
+                    "\t\t\t\t<element>\n" +
+                    "\t\t\t\t\t<id>Fusion Barcode</id>\n" +
+                    "\t\t\t\t\t<x>11</x>\n" +
+                    "\t\t\t\t\t<y>644</y>\n" +
+                    "\t\t\t\t</element>\n" +
+                    "\t\t\t</elements>\n" +
+                    "\t\t</process>"
+                ; break
+
+
         default: code=""; break
     }
     return code
