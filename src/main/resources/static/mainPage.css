@@ -1,36 +1,35 @@
 body{
     background-color: #dedede;
     color:black;
+
+}
+
+.pic{
+    position: absolute;
+    background-image: url(/image/pcOFF.png);
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: 100% 126%;
+    background-repeat: no-repeat;
 }
 .job_btn{
     position: absolute;
-    left: -3cm;
-    top: -2cm;
-    width: 13cm;
-    height: 12cm;
+    left: 35%;
+    top: 32%;
+    width: 33%;
+    height: 28%;
     background-color: transparent;
-    background-image: url(/image/pc.jpg);
-    background-size: cover;
-    transform: rotate(-45deg);
     border-style: none;
-}
-.job_btn:hover{
-    background-image: url(/image/pcOn.jpg);
 }
 
 .table_btn{
     position: absolute;
-    left: 0cm;
-    top: 12cm;
-    width: 4.5cm;
-    height: 5.5cm;
+    left: -1%;
+    top: 21%;
+    width: 25%;
+    height: 29%;
     background-color: transparent;
-    background-image: url(/image/notes.jpg);
-    background-size: cover;
-    transform: rotate(-45deg);
     border-style: none;
 
-}
-.table_btn:hover{
-    background-image: url(/image/notesTables.jpg);
 }

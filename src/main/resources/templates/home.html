@@ -10,13 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-      <div class="row">
-          <div class="col">
-              <a th:href="job"><button class="job_btn" ></button></a>
-              <a th:href="table"><button class="table_btn" ></button></a>
-          </div>
-      </div>
+  <div class="pic">
+      <a th:href="job"><button class="job_btn" ></button></a>
+      <a th:href="table"><button class="table_btn" ></button></a>
   </div>
+  <script th:src="@{/jquery/jquery.js}"></script>
+  <script th:src="@{/button.js}"></script>
 </body>
 </html>

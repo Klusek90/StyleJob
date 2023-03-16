@@ -1,21 +1,21 @@
 *{
-    color: wheat;
+    color: black;
 }
 body{
-    background-image: url(image/wood2.jpg);
+    background-color:dimgray;
 }
 .cell{
     float: left;
     font-size: 60%;
-    border-image: url(image/board.png) 8% repeat;
+    /*border-image: url(image/board.png) 8% repeat;*/
     margin: -1px;
     padding: 10px;
-    color: black;
+    color: white;
+    border-color: lightgrey;
 }
 
 .table-draw{
     /*centrowanie na srodku kartki*/
-    ackground-color: floralwhite;
     border-style: double;
     padding: 26px;
     width: 59%;
@@ -24,7 +24,7 @@ body{
     left: 44%;
     position: absolute;
     transform: translate(-50%,-49%);
-    background-color: cornsilk;
+    background-color: steelblue;
 }
 
 .slider.round {
