@@ -9,7 +9,6 @@ body{
     font-size: 60%;
     /*border-image: url(image/board.png) 8% repeat;*/
     margin: -1px;
-    padding: 10px;
     color: white;
     border-color: lightgrey;
 }

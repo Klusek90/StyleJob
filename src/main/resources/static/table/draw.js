@@ -11,17 +11,26 @@ function drawTable() {
     let s = document.getElementById("solid");
     let h =document.getElementById("sheaders");
     let r = document.getElementById("align-right");
+    let p = document.getElementById("padding-left");
+    let padding_value = document.getElementById("padding-value").value;
 
     let solid
+    let padding
 
     //cell width
 
 
 
     if (s.checked == true) {
-        solid = ' border-style: solid; padding-left: 4px;'
+        solid = ' border-style: solid;'
     } else {
         solid = ''
+    }
+
+    if (p.checked == true) {
+        padding = ' padding-left:'+padding_value+'px;'
+    } else {
+        padding = ''
     }
 
     fontsize = fontsize -rowNum;
@@ -45,7 +54,7 @@ function drawTable() {
             }
             cellWidth[j]=$('#colsize'+j).val()
 
-            cell += '<div class="cell" style="font-size:'+fontsize+'px; width:'+cellWidth[j] +'%;height: 100%;'+ solid+ boldheader+ lastrow+'">Text'+i+'.'+j+'</div>'
+            cell += '<div class="cell" style="font-size:'+fontsize+'px; width:'+cellWidth[j] +'%;height: 100%;'+ solid+ padding+ boldheader+ lastrow+'">Text'+i+'.'+j+'</div>'
         }
 
     draw+='<div class="inside-draw" style="height:'+ cellHeight+'%">'+cell+'</div>'
