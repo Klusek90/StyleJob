@@ -1,14 +1,15 @@
-
-
 function create(columnsNum, rowNum,list) {
 
     //--------checkboxes-----------
     let s = document.getElementById("solid");
     let h =document.getElementById("sheaders");
     let r = document.getElementById("align-right");
+    let p = document.getElementById("padding-left");
+    let padding_value = document.getElementById("padding-value").value;
+
 
     if (s.checked==true) {
-        s = " border=\"solid\"; padding-left: 4px"
+        s = " border=\"solid\""
     } else {
         s = ""
     }
@@ -27,6 +28,13 @@ function create(columnsNum, rowNum,list) {
         r = ""
    };
 
+    if (p.checked==true) {
+        p = " padding-left=\""+padding_value+"px\""
+    } else{
+        p = ""
+    };
+
+
 
 
  ///--------table code creation--------
@@ -40,13 +48,13 @@ function create(columnsNum, rowNum,list) {
        let rowBlock ="";
         for(let j=1;j<=(columnsNum);j++){
             if (j==columnsNum) {
-                rowBlock += '\n\t\t\t\t<fo:table-cell'+s+'>' +
-                    '\n\t\t\t\t\t<fo:block' + h +  r +'>' +
+                rowBlock += '\n\t\t\t\t<fo:table-cell'+s+p+'>' +
+                    '\n\t\t\t\t\t<fo:block' + h + r +'>' +
                     '\n\t\t\t\t\t\t Text' + i + "." + j +
                     '\n\t\t\t\t\t</fo:block>' +
                     '\n\t\t\t\t</fo:table-cell>';
             }else{
-                rowBlock += '\n\t\t\t\t<fo:table-cell'+s+'>' +
+                rowBlock += '\n\t\t\t\t<fo:table-cell'+s+p+'>' +
                     '\n\t\t\t\t\t<fo:block' + h +'>' +
                     '\n\t\t\t\t\t\t Text' + i + "." + j +
                     '\n\t\t\t\t\t</fo:block>' +
