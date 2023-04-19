@@ -1,35 +1,51 @@
-body{
-    background-color: #dedede;
-    color:black;
-
+.neon-button {
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    background-color: #1e1e1e;
+    border: none;
+    border-radius: 50px;
+    /*box-shadow: 0 0 40px #1e1e1e;*/
+    overflow: hidden;
+    margin-top: 1cm;
+    margin-left: 2cm;
+    width: 8cm;
 }
 
-.pic{
+.neon-button:before {
+    content: '';
     position: absolute;
-    background-image: url(/image/pcOFF.png);
-    height: 100%;
-    width: 100%;
-    background-position: center;
-    background-size: 100% 126%;
-    background-repeat: no-repeat;
-}
-.job_btn{
-    position: absolute;
-    left: 35%;
-    top: 32%;
-    width: 33%;
-    height: 28%;
-    background-color: transparent;
-    border-style: none;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #856eeb, #00ffff, #ffff00, #856eeb);
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
 }
 
-.table_btn{
-    position: absolute;
-    left: -1%;
-    top: 21%;
-    width: 25%;
-    height: 29%;
-    background-color: transparent;
-    border-style: none;
+.neon-button:hover:before {
+    transform: translate(50%, 50%);
+    opacity: 1;
+}
 
+.neon-button:hover {
+    animation: shine .5s ease-in-out forwards;
+    box-shadow: 0 0 40px #856eeb;
+}
+
+@keyframes shine {
+    from {
+        background-color: #1e1e1e;
+    }
+    to {
+        background-color: #856eeb;
+    }
 }
