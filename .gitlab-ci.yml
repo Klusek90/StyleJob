@@ -24,7 +24,6 @@ docker:
     - lordgaav/dind-options:latest
   variables:
     DOCKER_HOST: tcp://localhost:2375
-    https_proxy: http://192.168.10.244:8080
   before_script:
     - docker login -u kubernetes -p kubernetes gcr.myaceni.co.uk
   script:
