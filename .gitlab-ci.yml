@@ -25,7 +25,7 @@ docker:
   variables:
     DOCKER_HOST: tcp://localhost:2375
   before_script:
-    - docker login -u kubernetes -p kubernetes gcr.myaceni.co.uk
+    - docker login -u kubernetes -p kubernetes gitlab.datagraphic.com:4567
   script:
     - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA" .
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA"
