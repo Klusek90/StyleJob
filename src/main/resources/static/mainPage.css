@@ -1,3 +1,9 @@
+body{
+    background-image: url("/image/background.jpg");
+    background-repeat: no-repeat;
+
+}
+
 .neon-button {
     position: relative;
     display: inline-block;
@@ -24,7 +30,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, #856eeb, #00ffff, #ffff00, #856eeb);
+    background: linear-gradient(45deg, #EEE5B0, #00ffff, #ffff00, #EEE5B0);
     z-index: -1;
     filter: blur(20px);
     opacity: 0;
@@ -38,7 +44,8 @@
 
 .neon-button:hover {
     animation: shine .5s ease-in-out forwards;
-    box-shadow: 0 0 40px #856eeb;
+    box-shadow: 0 0 40px #EEE5B0;
+    color: black;
 }
 
 @keyframes shine {
@@ -46,6 +53,12 @@
         background-color: #1e1e1e;
     }
     to {
-        background-color: #856eeb;
+        background-color: #EEE5B0;
     }
+}
+
+.pic{
+    position: absolute;
+    bottom:3cm;
+    left:25%;
 }
